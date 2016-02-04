@@ -16,7 +16,7 @@
   "appConfig": {
     "host": "www.meihao.dev",
     "port": "80",
-    "server": "http://test.api.meihaoxueyuan.com/",
+    "server": "http://test.api.meihaoxueyuan.com",
     "key": "abcdefghigklmnopqrstuvwxyz",
     "app_path": ".",
     "template": "./template"
