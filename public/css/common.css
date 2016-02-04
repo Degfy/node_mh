@@ -1,0 +1,2502 @@
+@charset "UTF-8";
+/*html5*/
+/* line 2, sass/common.scss */
+article, aside, dialog, footer, header, footer, nav, figure, menu {
+  display: block;
+}
+
+/* line 3, sass/common.scss */
+input::-ms-clear,
+select::-ms-expand,
+input::-ms-reveal {
+  display: none;
+}
+
+/* line 8, sass/common.scss */
+input[type="text"]:focus, select:focus {
+  outline: none;
+  border-color: #1aa3EE;
+}
+
+/* line 12, sass/common.scss */
+html, div, section, header, nav, aside, h1, h2, h3, h4, h5, p, a, ul, li, img, span, em, table, tr, td {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* line 18, sass/common.scss */
+html, body {
+  min-width: 1200px;
+  width: auto !important;
+  width: 1200px;
+  width: 100%;
+  height: 100%;
+}
+
+/* @mixin transform($m){
+	-webkit-transform: $m;
+	-moz-transform: $m;
+	-ms-transform:$m;
+	-o-transform: $m;
+	transform: $m;
+} */
+/* line 148, sass/common.scss */
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* line 152, sass/common.scss */
+input {
+  outline: none;
+}
+
+/* line 155, sass/common.scss */
+.mr-10 {
+  margin-right: 10px;
+}
+
+/* line 158, sass/common.scss */
+.ml-10 {
+  margin-left: 10px;
+}
+
+/* line 161, sass/common.scss */
+.left {
+  float: left;
+}
+
+/* line 164, sass/common.scss */
+.right {
+  float: right;
+}
+
+/* line 167, sass/common.scss */
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0;
+}
+
+/* line 174, sass/common.scss */
+.clear-f {
+  display: block;
+  width: 0px !important;
+  height: 0px !important;
+}
+
+/* line 179, sass/common.scss */
+hr {
+  border: 1px solid #E9E9E9;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 184, sass/common.scss */
+.fixed {
+  position: fixed !important;
+  z-index: 999;
+}
+
+/* line 188, sass/common.scss */
+.page {
+  background: #F5F5F5;
+}
+
+/* line 191, sass/common.scss */
+.wrap {
+  margin: 0 auto;
+  width: 1200px;
+  text-align: left;
+}
+
+/* line 196, sass/common.scss */
+.white {
+  background: #FFFFFF !important;
+}
+
+/* line 199, sass/common.scss */
+.bkF9F9FA {
+  background: #F9F9FA !important;
+}
+
+/* line 202, sass/common.scss */
+.gray {
+  background: #F5F5F5 !important;
+}
+
+@keyframes user {
+  0% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-moz-keyframes user {
+  0% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes user {
+  0% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-o-keyframes user {
+  0% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes floating-arrow {
+  from {
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+  65% {
+    -webkit-transform: translate(-50%, 15px);
+    transform: translate(-50%, 15px);
+  }
+  to {
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+}
+@-moz-keyframes floating-arrow {
+  from {
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+  65% {
+    -webkit-transform: translate(-50%, 15px);
+    transform: translate(-50%, 15px);
+  }
+  to {
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+}
+@-o-keyframes floating-arrow {
+  from {
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+  65% {
+    -webkit-transform: translate(-50%, 15px);
+    transform: translate(-50%, 15px);
+  }
+  to {
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+}
+@keyframes floating-arrow {
+  from {
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+  65% {
+    -webkit-transform: translate(-50%, 15px);
+    transform: translate(-50%, 15px);
+  }
+  to {
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+}
+/* line 283, sass/common.scss */
+.float-arrow, .guide .wrap > a {
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-animation: floating-arrow 2s ease infinite;
+  -moz-animation: floating-arrow 2s ease infinite;
+  -ms-animation: floating-arrow 2s ease infinite;
+  -o-animation: floating-arrow 2s ease infinite;
+  animation: floating-arrow 2s ease infinite;
+}
+
+/* line 289, sass/common.scss */
+:root .gradient {
+  filter: none;
+}
+
+/*头部*/
+/* line 291, sass/common.scss */
+.page-header {
+  height: 76px;
+  width: 100%;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(0, 0, 0, 0.5)), to(transparent));
+  background: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.5));
+  background: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.5));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+}
+
+/* line 299, sass/common.scss */
+.index .page-header {
+  position: fixed;
+  z-index: 999;
+}
+
+/* line 303, sass/common.scss */
+.about .page-header,
+.noGradident {
+  width: 100%;
+  height: 76px;
+  background: none;
+}
+
+/* line 309, sass/common.scss */
+.detail .page-header,
+.about .page-header {
+  position: absolute;
+  top: 0px;
+  z-index: 99;
+}
+
+/* line 315, sass/common.scss */
+.link .page-header,
+.list .page-header,
+.error .page-header {
+  width: 100%;
+  height: 60px;
+  background: none;
+}
+
+/* line 322, sass/common.scss */
+.topbar {
+  position: relative;
+  width: 100%;
+  background: #2C3E50;
+  height: 60px;
+  text-align: center;
+  transition: height 0.3s ease, padding 0.3s ease, background ease 0.3s;
+  -moz-transition: height 0.3s ease, padding 0.3s ease, background ease 0.3s;
+  -webkit-transition: height 0.3s ease, padding 0.3s ease, background ease 0.3s;
+  -o-transition: height 0.3s ease, padding 0.3s ease, background ease 0.3s;
+}
+/* line 329, sass/common.scss */
+.topbar nav {
+  vertical-align: middle;
+  margin: 0 auto;
+  width: 1200px;
+  min-height: 60px;
+  text-align: left;
+}
+/* line 335, sass/common.scss */
+.topbar nav h1 {
+  float: left;
+  margin-right: 38px;
+}
+/* line 338, sass/common.scss */
+.topbar nav h1 > a {
+  line-height: 0px;
+  width: 120px;
+  height: 30px;
+  display: block;
+  margin-top: 15px;
+  background-image: url("/public/img/logo1.png");
+  background-image: -webkit-image-set(url("/public/img/logo1.png") 1x, url("/public/img/logo1@2x.png") 2x);
+  background-image: -moz-image-set(url("/public/img/logo1.png") 1x, url("/public/img/logo1@2x.png") 2x);
+  background-image: -o-image-set(url("/public/img/logo1.png") 1x, url("/public/img/logo1@2x.png") 2x);
+  background-image: -ms-image-set(url("/public/img/logo1.png") 1x, url("/public/img/logo1@2x.png") 2x);
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: background ease 0.3s;
+  -moz-transition: background ease 0.3s;
+  -webkit-transition: background ease 0.3s;
+  -o-transition: background ease 0.3s;
+}
+/* line 354, sass/common.scss */
+.topbar nav .navItem {
+  float: left;
+}
+/* line 356, sass/common.scss */
+.topbar nav .navItem > a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  padding: 0px 15px;
+  color: #7D91A6;
+  font-size: 14px;
+  line-height: 60px;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+/* line 363, sass/common.scss */
+.topbar nav .navItem > a:hover {
+  color: #FFFFFF;
+  background: #3A4D60;
+}
+/* line 370, sass/common.scss */
+.topbar .soform {
+  position: relative;
+  float: right;
+  margin-right: 20px;
+  margin-top: 15px;
+  height: 30px;
+  width: 30px;
+  overflow: hidden;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+/* line 380, sass/common.scss */
+.topbar .soform form {
+  width: 100%;
+  overflow: hidden;
+}
+/* line 384, sass/common.scss */
+.topbar .soform .search {
+  display: none;
+  padding: 0px;
+  float: left;
+  position: absolute;
+  z-index: 1;
+  padding-left: 15px;
+  width: 75%;
+  height: 30px;
+  line-height: 30px\9;
+  _line-height: 30px;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 12px;
+  color: #7D91A6;
+  box-shadow: none;
+  transition: all 0.2s ease 0.01s;
+  -moz-transition: all 0.2s ease 0.01s;
+  -webkit-transition: all 0.2s ease 0.01s;
+  -o-transition: all 0.2s ease 0.01s;
+}
+/* line 402, sass/common.scss */
+.topbar .soform .search::-webkit-input-placeholder {
+  color: #7D91A6;
+}
+/* line 405, sass/common.scss */
+.topbar .soform .search::-moz-placeholder {
+  color: #7D91A6;
+}
+/* line 408, sass/common.scss */
+.topbar .soform .search::-ms-input-placeholder {
+  color: #7D91A6;
+}
+/* line 412, sass/common.scss */
+.topbar .soform .in_submit {
+  display: none;
+}
+/* line 415, sass/common.scss */
+.topbar .soform .icon-search {
+  position: absolute;
+  top: 0;
+  right: 1px;
+  z-index: 0;
+  display: block;
+  height: 30px;
+  width: 30px;
+  font-size: 12px;
+  color: #7D91A6;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+/* line 430, sass/common.scss */
+.topbar .soform.open, .topbar .soform.spread {
+  margin-right: 30px;
+  width: 200px;
+  background: #384B5E;
+}
+/* line 434, sass/common.scss */
+.topbar .soform.open .search, .topbar .soform.spread .search {
+  display: block;
+  color: #7D91A6;
+}
+/* line 438, sass/common.scss */
+.topbar .soform.open .in_submit, .topbar .soform.spread .in_submit {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  right: 1px;
+  z-index: 5;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  opacity: 0;
+  background: none;
+  cursor: pointer;
+  border: 0;
+}
+/* line 452, sass/common.scss */
+.topbar .soform.open .icon-search, .topbar .soform.spread .icon-search {
+  color: #7D91A6;
+  transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+}
+/* line 457, sass/common.scss */
+.topbar .soform.focus {
+  background: #FFFFFF;
+}
+/* line 461, sass/common.scss */
+.topbar .loginHTML {
+  padding-left: 15px;
+  float: right;
+  position: relative;
+}
+/* line 465, sass/common.scss */
+.topbar .loginHTML > a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  padding: 0px 15px;
+  color: #7D91A6;
+  font-size: 14px;
+  line-height: 60px;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+/* line 472, sass/common.scss */
+.topbar .loginHTML > a:hover {
+  color: #FFFFFF;
+  background: #3A4D60;
+}
+/* line 477, sass/common.scss */
+.topbar .loginHTML .logintip {
+  position: absolute;
+  z-index: 900;
+  top: 50px;
+  left: -5px;
+}
+/* line 482, sass/common.scss */
+.topbar .loginHTML .logintip map {
+  outline: none;
+}
+/* line 486, sass/common.scss */
+.topbar .loginHTML:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 20px;
+  width: 1px;
+  height: 20px;
+  background: #3A4D60;
+}
+/* line 497, sass/common.scss */
+.topbar .user-prop {
+  position: relative;
+  float: right;
+  height: 60px;
+  width: 60px;
+  cursor: default;
+}
+/* line 503, sass/common.scss */
+.topbar .user-prop > a {
+  float: left;
+  position: relative;
+  z-index: 99;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  height: 60px;
+  width: 60px;
+  color: #fff;
+  font-size: 0px;
+}
+/* line 512, sass/common.scss */
+.topbar .user-prop > a span {
+  position: relative;
+  z-index: 5;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin: 17px 0px 0px 17px;
+  width: 28px;
+  height: 28px;
+  overflow: hidden;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid #696A70;
+  font-size: 0px;
+}
+/* line 523, sass/common.scss */
+.topbar .user-prop > a span img {
+  position: relative;
+  z-index: 2;
+  width: 26px;
+  height: 26px;
+  vertical-align: top;
+  -moz-border-radius: 32px;
+  -webkit-border-radius: 32px;
+  border-radius: 32px;
+}
+/* line 532, sass/common.scss */
+.topbar .user-prop > a .ico-y {
+  position: absolute;
+  z-index: 7;
+  top: 35px;
+  left: 35px;
+  width: 8px;
+  height: 8px;
+  display: block;
+  background-color: #FF6446;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 543, sass/common.scss */
+.topbar .user-prop > a:hover {
+  background: #3A4D60;
+}
+/* line 546, sass/common.scss */
+.topbar .user-prop > a.active {
+  background: #3A4D60;
+}
+/* line 550, sass/common.scss */
+.topbar .user-prop .per {
+  display: none;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 100;
+  padding-top: 60px;
+}
+/* line 557, sass/common.scss */
+.topbar .user-prop .per .triangle {
+  position: absolute;
+  content: "";
+  right: 21px;
+  top: 46px;
+  z-index: 99;
+  display: block;
+  width: 0px;
+  height: 0px;
+  border: 7px solid transparent;
+  border-bottom: 7px solid #FFFFFF;
+}
+/* line 569, sass/common.scss */
+.topbar .user-prop .per.show {
+  display: block;
+  -webkit-transform-origin: 90% 74px;
+  -ms-transform-origin: 90% 74px;
+  -moz-transform-origin: 90% 74px;
+  transform-origin: 90% 74px;
+  -webkit-animation: user 0.1s;
+  -moz-animation: user 0.1s;
+  -ms-animation: user 0.1s;
+  -o-animation: user 0.1s;
+  animation: user 0.1s;
+}
+/* line 578, sass/common.scss */
+.topbar .user-prop .per-c {
+  position: relative;
+  width: 220px;
+  padding-bottom: 10px;
+  overflow: hidden;
+  background: #ffffff;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+/* line 586, sass/common.scss */
+.topbar .user-prop .per-c .pre-name {
+  padding: 0px 20px 0px 15px;
+  border-bottom: 1px solid #E9E9E9;
+  overflow: hidden;
+  font-size: 13px;
+  color: #696A70;
+  height: 50px;
+  line-height: 50px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* line 597, sass/common.scss */
+.topbar .user-prop .per-c .pre-his {
+  width: 100%;
+  height: 48px;
+  border-bottom: 1px #e9e9e9 solid;
+}
+/* line 601, sass/common.scss */
+.topbar .user-prop .per-c .pre-his a {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 39px;
+  height: 100%;
+  font-size: 0px;
+  line-height: 47px;
+  transition: color ease 0.3s;
+  -moz-transition: color ease 0.3s;
+  -webkit-transition: color ease 0.3s;
+  -o-transition: color ease 0.3s;
+}
+/* line 611, sass/common.scss */
+.topbar .user-prop .per-c .pre-his a em {
+  position: absolute;
+  top: 16px;
+  left: 14px;
+  color: #1AA3EE;
+  font-size: 17px;
+  vertical-align: middle;
+  transition: color ease 0.3s;
+  -moz-transition: color ease 0.3s;
+  -webkit-transition: color ease 0.3s;
+  -o-transition: color ease 0.3s;
+}
+/* line 620, sass/common.scss */
+.topbar .user-prop .per-c .pre-his a .pre-tip {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  margin-left: -41px;
+  display: none;
+  padding: 5px;
+  font-size: 12px;
+  line-height: 12px;
+  color: #FFFFFF;
+  background: #242629;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 632, sass/common.scss */
+.topbar .user-prop .per-c .pre-his a .pre-tip:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  margin-left: -5px;
+  width: 0px;
+  height: 0px;
+  border: 5px solid transparent;
+  border-top: 5px solid #242629;
+}
+/* line 645, sass/common.scss */
+.topbar .user-prop .per-c .pre-his a .coure-name {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  max-width: 160px;
+  font-size: 13px;
+  color: #242629;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* line 654, sass/common.scss */
+.topbar .user-prop .per-c .pre-his a:hover {
+  color: #1AA3EE;
+}
+/* line 656, sass/common.scss */
+.topbar .user-prop .per-c .pre-his a:hover em {
+  color: #1AA3EE;
+}
+/* line 659, sass/common.scss */
+.topbar .user-prop .per-c .pre-his a:hover span {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+/* line 665, sass/common.scss */
+.topbar .user-prop .per-c .pre-item {
+  margin-top: 10px;
+}
+/* line 667, sass/common.scss */
+.topbar .user-prop .per-c .pre-item a {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px 0px 12px;
+  font-size: 13px;
+  color: #696A70;
+  cursor: pointer;
+}
+/* line 675, sass/common.scss */
+.topbar .user-prop .per-c .pre-item a > em {
+  position: relative;
+  top: -2px;
+  margin-right: 10px;
+  color: #1AA3EE;
+  font-size: 17px;
+  vertical-align: middle;
+}
+/* line 683, sass/common.scss */
+.topbar .user-prop .per-c .pre-item a .dot {
+  position: relative;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-left: 10px;
+  width: 8px;
+  height: 8px;
+  background-color: #FF6446;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 692, sass/common.scss */
+.topbar .user-prop .per-c .pre-item a:visited {
+  color: #696A70;
+}
+/* line 695, sass/common.scss */
+.topbar .user-prop .per-c .pre-item a:hover, .topbar .user-prop .per-c .pre-item a:active {
+  color: #696A70;
+  background: #E8F6FE\9;
+  background: rgba(26, 163, 238, 0.1) none repeat scroll 0 0 !important;
+}
+/* line 705, sass/common.scss */
+.topbar.transparentBg {
+  height: 80px;
+  padding: 10px 0px;
+  background: none;
+}
+/* line 710, sass/common.scss */
+.topbar.transparentBg h1 > a {
+  background-image: url("/public/img/logo2.png");
+  background-image: -webkit-image-set(url("/public/img/logo2.png") 1x, url("/public/img/logo2@2x.png") 2x);
+  background-image: -moz-image-set(url("/public/img/logo2.png") 1x, url("/public/img/logo2@2x.png") 2x);
+  background-image: -o-image-set(url("/public/img/logo2.png") 1x, url("/public/img/logo2@2x.png") 2x);
+  background-image: -ms-image-set(url("/public/img/logo2.png") 1x, url("/public/img/logo2@2x.png") 2x);
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: background ease 0.3s;
+  -moz-transition: background ease 0.3s;
+  -webkit-transition: background ease 0.3s;
+  -o-transition: background ease 0.3s;
+}
+/* line 723, sass/common.scss */
+.topbar.transparentBg nav .navItem > a {
+  color: #ffffff;
+  transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+}
+/* line 726, sass/common.scss */
+.topbar.transparentBg nav .navItem > a:hover {
+  color: #D1EFFF;
+  color: rgba(255, 255, 255, 0.7);
+  background: transparent;
+}
+/* line 735, sass/common.scss */
+.topbar.transparentBg .soform .icon-search {
+  color: #fff;
+}
+/* line 738, sass/common.scss */
+.topbar.transparentBg .soform.open, .topbar.transparentBg .soform.spread {
+  background: #ffffff;
+}
+/* line 740, sass/common.scss */
+.topbar.transparentBg .soform.open .icon-search, .topbar.transparentBg .soform.spread .icon-search {
+  color: #B7B9BD;
+}
+/* line 743, sass/common.scss */
+.topbar.transparentBg .soform.open .search, .topbar.transparentBg .soform.spread .search {
+  display: block;
+  color: #7D91A6;
+}
+/* line 748, sass/common.scss */
+.topbar.transparentBg .soform.focus {
+  background: #FFFFFF;
+}
+/* line 752, sass/common.scss */
+.topbar.transparentBg .soform:hover .ico-serche {
+  color: #DADADA;
+}
+/* line 758, sass/common.scss */
+.topbar.transparentBg .loginHTML > a {
+  color: #ffffff;
+  transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+}
+/* line 761, sass/common.scss */
+.topbar.transparentBg .loginHTML > a:hover {
+  color: #D1EFFF;
+  color: rgba(255, 255, 255, 0.7);
+  background: transparent;
+}
+/* line 767, sass/common.scss */
+.topbar.transparentBg .loginHTML:after {
+  background: #FFFFFF;
+  background: rgba(255, 255, 255, 0.2);
+}
+/* line 774, sass/common.scss */
+.topbar.transparentBg .user-prop > a:hover {
+  background: none;
+}
+/* line 793, sass/common.scss */
+.topbar.transparentBg .user-prop .i1 {
+  top: 63px;
+}
+/* line 796, sass/common.scss */
+.topbar.transparentBg .user-prop .i2 {
+  top: 64px;
+}
+/* line 800, sass/common.scss */
+.topbar.transparentBg:after {
+  display: none;
+}
+
+/*底部*/
+/* line 807, sass/common.scss */
+.bottombar {
+  width: 100%;
+  min-width: 720px;
+  color: #5E768E;
+  background: #2C3E50;
+}
+/* line 812, sass/common.scss */
+.bottombar .conetnt {
+  padding: 40px 0px;
+  display: table;
+  min-height: 160px;
+}
+/* line 816, sass/common.scss */
+.bottombar .conetnt > div {
+  min-height: 160px;
+  display: table-cell;
+  vertical-align: top;
+}
+/* line 820, sass/common.scss */
+.bottombar .conetnt > div a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  font-size: 12px;
+  color: #5E768E;
+  transition: color ease 0.3s;
+  -moz-transition: color ease 0.3s;
+  -webkit-transition: color ease 0.3s;
+  -o-transition: color ease 0.3s;
+}
+/* line 825, sass/common.scss */
+.bottombar .conetnt > div a:hover {
+  color: #92ABC3;
+}
+/* line 830, sass/common.scss */
+.bottombar .conetnt .l {
+  position: relative;
+  width: 420px;
+  border-right: 1px solid #364758;
+}
+/* line 834, sass/common.scss */
+.bottombar .conetnt .l h3 {
+  margin-top: 40px;
+  margin-bottom: 19px;
+  width: 180px;
+  height: 45px;
+  overflow: hidden;
+  background-image: url(../img/img_bottom_logo.png);
+  background-image: -webkit-image-set(url(../img/img_bottom_logo.png) 1x, url(../img/img_bottom_logo@2x.png) 2x);
+  background-image: -moz-image-set(url(../img/img_bottom_logo.png) 1x, url(../img/img_bottom_logo@2x.png) 2x);
+  background-image: -o-image-set(url(../img/img_bottom_logo.png) 1x, url(../img/img_bottom_logo@2x.png) 2x);
+  background-image: -ms-image-set(url(../img/img_bottom_logo.png) 1x, url(../img/img_bottom_logo@2x.png) 2x);
+  text-indent: -9999px;
+  white-space: nowrap;
+}
+/* line 850, sass/common.scss */
+.bottombar .conetnt .l p {
+  line-height: 17px;
+}
+/* line 852, sass/common.scss */
+.bottombar .conetnt .l p a {
+  font-size: 12px;
+  margin-right: 30px;
+}
+/* line 855, sass/common.scss */
+.bottombar .conetnt .l p a:hover {
+  color: #92ABC3;
+}
+/* line 861, sass/common.scss */
+.bottombar .conetnt .c {
+  width: 440px;
+  padding-top: 36px;
+  border-right: 1px solid #364758;
+  text-align: center;
+}
+/* line 866, sass/common.scss */
+.bottombar .conetnt .c > p {
+  line-height: 36px;
+}
+/* line 869, sass/common.scss */
+.bottombar .conetnt .c strong {
+  font-size: 30px;
+}
+/* line 871, sass/common.scss */
+.bottombar .conetnt .c strong em {
+  position: relative;
+  top: 1px;
+  margin-right: 10px;
+  font-size: 30px;
+  color: #5E768E;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+/* line 880, sass/common.scss */
+.bottombar .conetnt .c a {
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+/* line 882, sass/common.scss */
+.bottombar .conetnt .c a:hover {
+  color: #92ABC3;
+}
+/* line 884, sass/common.scss */
+.bottombar .conetnt .c a:hover em {
+  color: #92ABC3;
+}
+/* line 890, sass/common.scss */
+.bottombar .conetnt .r {
+  width: 340px;
+  text-align: center;
+}
+/* line 893, sass/common.scss */
+.bottombar .conetnt .r img {
+  margin-top: 40px;
+  max-width: 85px;
+  max-height: 85px;
+}
+/* line 898, sass/common.scss */
+.bottombar .conetnt .r p {
+  font-size: 12px;
+  line-height: 26px;
+}
+/* line 904, sass/common.scss */
+.bottombar .friend-link {
+  margin-top: -4px;
+  padding-bottom: 25px;
+  font-size: 0px;
+}
+/* line 908, sass/common.scss */
+.bottombar .friend-link span, .bottombar .friend-link a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-right: 30px;
+  margin-bottom: 15px;
+  font-size: 12px;
+  line-height: 17px;
+  color: #4F6377;
+}
+/* line 921, sass/common.scss */
+.bottombar .friend-link a:hover {
+  color: #92ABC3;
+}
+/* line 926, sass/common.scss */
+.bottombar .copyright {
+  height: 60px;
+  line-height: 60px;
+  background: #263646;
+  color: #425669;
+  text-align: center;
+}
+/* line 932, sass/common.scss */
+.bottombar .copyright p {
+  color: #425669;
+  font-size: 12px;
+}
+
+/* line 938, sass/common.scss */
+.fixbar {
+  background: #001C28;
+  filter: alpha(opacity=85);
+  background: #001C28 \9;
+  background: rgba(0, 28, 40, 0.85) none repeat scroll 0 0 !important;
+  bottom: 0px;
+  width: 100%;
+  z-index: 995;
+}
+/* line 946, sass/common.scss */
+.fixbar nav {
+  height: 54px;
+}
+/* line 949, sass/common.scss */
+.fixbar ul {
+  float: left;
+  overflow: hidden;
+}
+/* line 953, sass/common.scss */
+.fixbar li {
+  float: left;
+  padding: 0px 25px;
+  display: none;
+}
+/* line 957, sass/common.scss */
+.fixbar li a {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  font-size: 14px;
+  color: #fff;
+}
+/* line 963, sass/common.scss */
+.fixbar li a:hover {
+  color: #FF4F79;
+}
+/* line 966, sass/common.scss */
+.fixbar li a.active {
+  color: #FF4F79;
+}
+/* line 971, sass/common.scss */
+.fixbar div {
+  margin-left: 35px;
+  float: left;
+}
+/* line 974, sass/common.scss */
+.fixbar div a {
+  position: relative;
+  display: none;
+  float: right;
+  margin-top: 9px;
+  font-size: 13px;
+  width: 130px;
+  height: 36px;
+  line-height: 36px;
+  background: #FF4F79;
+  text-align: center;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+}
+/* line 983, sass/common.scss */
+.fixbar div a:hover {
+  background: #FF4855;
+}
+
+/* line 989, sass/common.scss */
+.sidebar {
+  position: fixed;
+  right: 10px;
+  bottom: 52px;
+  z-index: 995;
+  width: 40px;
+}
+/* line 995, sass/common.scss */
+.sidebar a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-bottom: 8px;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  background: #1AA3EE;
+  border: 1px #1AA3EE solid;
+  transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+}
+/* line 1006, sass/common.scss */
+.sidebar a > em {
+  width: 18px;
+  height: 16px;
+  font-size: 12px;
+  line-height: 44px;
+  color: #fff;
+  vertical-align: middle;
+}
+/* line 1013, sass/common.scss */
+.sidebar a > em.em1 {
+  font-size: 16px;
+}
+/* line 1016, sass/common.scss */
+.sidebar a > em.em2 {
+  font-size: 19px;
+}
+/* line 1019, sass/common.scss */
+.sidebar a > em.em3 {
+  font-size: 20px;
+}
+/* line 1022, sass/common.scss */
+.sidebar a > em.em4 {
+  font-size: 18px;
+}
+/* line 1025, sass/common.scss */
+.sidebar a > em.em5 {
+  font-size: 19px;
+}
+/* line 1029, sass/common.scss */
+.sidebar a .side_b {
+  position: absolute;
+  width: 97px;
+  right: 60px;
+  top: 7px;
+  overflow: hidden;
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  opacity: 0;
+  display: none\9;
+  transition: filter 0.15s ease, right 0.3s ease;
+  -moz-transition: filter 0.15s ease, right 0.3s ease;
+  -webkit-transition: filter 0.15s ease, right 0.3s ease;
+  -o-transition: filter 0.15s ease, right 0.3s ease;
+  visibility: hidden;
+}
+/* line 1039, sass/common.scss */
+.sidebar a .side_b > div {
+  position: relative;
+  width: 70%;
+  padding: 0px 8px;
+  height: 30px;
+  line-height: 28px;
+  color: #9B9B9B;
+  border: 1px #E9E9E9 solid;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 0px;
+  background: #fff;
+}
+/* line 1050, sass/common.scss */
+.sidebar a .side_b > div em {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  font-size: 12px;
+}
+/* line 1055, sass/common.scss */
+.sidebar a .side_b > div > span {
+  position: absolute;
+  right: 0px;
+  top: 10px;
+}
+/* line 1059, sass/common.scss */
+.sidebar a .side_b > div > span .e1 {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid #E9E9E9;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+/* line 1063, sass/common.scss */
+.sidebar a .side_b > div > span .e2 {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid #fff;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  left: -1px;
+}
+/* line 1070, sass/common.scss */
+.sidebar a .side_b.weixin {
+  width: 116px;
+  height: 127px;
+  top: -36px;
+  right: 85px;
+}
+/* line 1075, sass/common.scss */
+.sidebar a .side_b.weixin > div {
+  width: 110px;
+  height: 125px;
+  padding: 0px;
+}
+/* line 1079, sass/common.scss */
+.sidebar a .side_b.weixin > div img {
+  margin-top: 7px;
+}
+/* line 1082, sass/common.scss */
+.sidebar a .side_b.weixin > div p {
+  font-size: 12px;
+  color: #9B9B9B;
+  line-height: 0px;
+}
+/* line 1087, sass/common.scss */
+.sidebar a .side_b.weixin > div > span {
+  top: 50%;
+  margin-top: -10px;
+}
+/* line 1093, sass/common.scss */
+.sidebar a .side_b.tel {
+  right: 70px;
+  width: 170px;
+  right: 85px;
+}
+/* line 1097, sass/common.scss */
+.sidebar a .side_b.tel > div {
+  width: 94%;
+  padding: 0px;
+}
+/* line 1103, sass/common.scss */
+.sidebar a.go-top {
+  height: 40px;
+  top: 191px;
+  line-height: 40px;
+  font-size: 15px;
+}
+/* line 1109, sass/common.scss */
+.sidebar a:hover {
+  background: #48BFFF;
+  border: 1px solid #48BFFF;
+}
+/* line 1112, sass/common.scss */
+.sidebar a:hover .side_b {
+  visibility: visible;
+  display: block\9;
+  filter: alpha(opacity=90);
+  -moz-opacity: 0.9;
+  -khtml-opacity: 0.9;
+  opacity: 0.9;
+  right: 26px;
+}
+/* line 1117, sass/common.scss */
+.sidebar a:hover .side_b.weixin {
+  right: 50px;
+}
+/* line 1120, sass/common.scss */
+.sidebar a:hover .side_b.tel {
+  right: 46px;
+}
+/* line 1125, sass/common.scss */
+.sidebar a.red {
+  background: #FF4F79;
+  border: 1px #FF4F79 solid;
+}
+/* line 1128, sass/common.scss */
+.sidebar a.red:hover {
+  background: #FF4855;
+  border: 1px solid #FF4855;
+}
+/* line 1131, sass/common.scss */
+.sidebar a.red:hover .side_b {
+  visibility: visible;
+  display: block\9;
+  filter: alpha(opacity=90);
+  -moz-opacity: 0.9;
+  -khtml-opacity: 0.9;
+  opacity: 0.9;
+  right: 26px;
+}
+/* line 1136, sass/common.scss */
+.sidebar a.red:hover .side_b.weixin {
+  right: 50px;
+}
+/* line 1139, sass/common.scss */
+.sidebar a.red:hover .side_b.tel {
+  right: 46px;
+}
+
+/* line 1147, sass/common.scss */
+.advertisement {
+  width: 120px;
+  position: fixed;
+  left: 10px;
+  bottom: 50px;
+  z-index: 995;
+}
+/* line 1153, sass/common.scss */
+.advertisement a {
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
+  line-height: 0px;
+}
+/* line 1158, sass/common.scss */
+.advertisement a em {
+  position: absolute;
+  top: 0px;
+  right: -10px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 20px;
+  height: 20px;
+  background-image: url(../img/close.png);
+  background-image: -webkit-image-set(url(../img/close.png) 1x, url(../img/close@2x.png) 2x);
+  background-image: -moz-image-set(url(../img/close.png) 1x, url(../img/close@2x.png) 2x);
+  background-image: -o-image-set(url(../img/close.png) 1x, url(../img/close@2x.png) 2x);
+  background-image: -ms-image-set(url(../img/close.png) 1x, url(../img/close@2x.png) 2x);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* line 1179, sass/common.scss */
+.consultAdvertisement {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+}
+/* line 1187, sass/common.scss */
+.consultAdvertisement .maskbg {
+  width: 100%;
+  height: 100%;
+  filter: Alpha(opacity=30);
+  background: #000000 \9;
+  background: rgba(0, 0, 0, 0.3) repeat scroll 0 0 !important;
+}
+/* line 1194, sass/common.scss */
+.consultAdvertisement .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -224px;
+  margin-left: -224px;
+}
+
+/* line 1202, sass/common.scss */
+.guide {
+  padding-bottom: 51px;
+}
+/* line 1204, sass/common.scss */
+.guide .wrap {
+  position: relative;
+  text-align: center;
+}
+/* line 1207, sass/common.scss */
+.guide .wrap h2 {
+  padding: 70px 0px 60px;
+  font-size: 38px;
+  color: #242629;
+}
+/* line 1212, sass/common.scss */
+.guide .wrap > img {
+  width: 928px;
+  height: 464px;
+}
+/* line 1216, sass/common.scss */
+.guide .wrap > div {
+  position: absolute;
+  left: 50%;
+  top: 460px;
+  width: 110px;
+  height: 110px;
+  margin-left: -55px;
+}
+/* line 1223, sass/common.scss */
+.guide .wrap > div > span {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 110px;
+  height: 110px;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  background: #FFE8BD;
+}
+/* line 1230, sass/common.scss */
+.guide .wrap > div > em {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 23;
+  margin: -37px 0px 0px -37px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 74px;
+  height: 74px;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  background: #FFBF46;
+}
+/* line 1242, sass/common.scss */
+.guide .wrap > div > i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 22;
+  margin: -37px 0px 0px -37px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 74px;
+  height: 74px;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  background: #FFFFFF;
+}
+/* line 1255, sass/common.scss */
+.guide .wrap > div.general span {
+  -webkit-animation: enlarge 6s cubic-bezier(0.24, 0.01, 0, 1) 1;
+  -moz-animation: enlarge 6s cubic-bezier(0.24, 0.01, 0, 1) 1;
+  -ms-animation: enlarge 6s cubic-bezier(0.24, 0.01, 0, 1) 1;
+  -o-animation: enlarge 6s cubic-bezier(0.24, 0.01, 0, 1) 1;
+  animation: enlarge 6s cubic-bezier(0.24, 0.01, 0, 1) 1;
+}
+/* line 1258, sass/common.scss */
+.guide .wrap > div.general em {
+  -webkit-animation: reduce 6s cubic-bezier(0.24, 0.01, 0, 1) 1;
+  -moz-animation: reduce 6s cubic-bezier(0.24, 0.01, 0, 1) 1;
+  -ms-animation: reduce 6s cubic-bezier(0.24, 0.01, 0, 1) 1;
+  -o-animation: reduce 6s cubic-bezier(0.24, 0.01, 0, 1) 1;
+  animation: reduce 6s cubic-bezier(0.24, 0.01, 0, 1) 1;
+}
+/* line 1261, sass/common.scss */
+.guide .wrap > div.general i {
+  display: none;
+}
+/* line 1266, sass/common.scss */
+.guide .wrap > div.loading span {
+  -webkit-animation: enlarge 0.4s cubic-bezier(0.24, 0.01, 0, 1) 2;
+  -moz-animation: enlarge 0.4s cubic-bezier(0.24, 0.01, 0, 1) 2;
+  -ms-animation: enlarge 0.4s cubic-bezier(0.24, 0.01, 0, 1) 2;
+  -o-animation: enlarge 0.4s cubic-bezier(0.24, 0.01, 0, 1) 2;
+  animation: enlarge 0.4s cubic-bezier(0.24, 0.01, 0, 1) 2;
+}
+/* line 1269, sass/common.scss */
+.guide .wrap > div.loading em {
+  -webkit-animation: reduce 0.4s cubic-bezier(0.24, 0.01, 0, 1) 2;
+  -moz-animation: reduce 0.4s cubic-bezier(0.24, 0.01, 0, 1) 2;
+  -ms-animation: reduce 0.4s cubic-bezier(0.24, 0.01, 0, 1) 2;
+  -o-animation: reduce 0.4s cubic-bezier(0.24, 0.01, 0, 1) 2;
+  animation: reduce 0.4s cubic-bezier(0.24, 0.01, 0, 1) 2;
+}
+/* line 1272, sass/common.scss */
+.guide .wrap > div.loading i {
+  display: none;
+}
+/* line 1277, sass/common.scss */
+.guide .wrap > div.eye em {
+  -webkit-animation: eye 0.3s cubic-bezier(0.84, 0.01, 0.66, 1) 1;
+  -moz-animation: eye 0.3s cubic-bezier(0.84, 0.01, 0.66, 1) 1;
+  -ms-animation: eye 0.3s cubic-bezier(0.84, 0.01, 0.66, 1) 1;
+  -o-animation: eye 0.3s cubic-bezier(0.84, 0.01, 0.66, 1) 1;
+  animation: eye 0.3s cubic-bezier(0.84, 0.01, 0.66, 1) 1;
+}
+/* line 1280, sass/common.scss */
+.guide .wrap > div.eye i {
+  display: block;
+}
+/* line 1285, sass/common.scss */
+.guide .wrap > a {
+  position: relative;
+  width: 2em;
+  left: 1em;
+  display: block;
+  margin: 27px auto 0px;
+  color: #1AA3EE;
+}
+/* line 1293, sass/common.scss */
+.guide .wrap > a em {
+  font-size: 12px;
+}
+
+/* line 1300, sass/common.scss */
+.recommend-box {
+  text-align: center;
+  background: #F5F5F5;
+}
+/* line 1303, sass/common.scss */
+.recommend-box header {
+  padding: 60px 0px 40px;
+  text-align: center;
+}
+/* line 1306, sass/common.scss */
+.recommend-box header h2 {
+  font-size: 38px;
+  color: #242629;
+}
+/* line 1310, sass/common.scss */
+.recommend-box header h3 {
+  position: relative;
+  width: 56px;
+  font-size: 14px;
+  color: #1AA3EE;
+  padding: 10px 0px;
+  cursor: pointer;
+}
+/* line 1317, sass/common.scss */
+.recommend-box header h3:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #1AA3EE;
+  filter: alpha(opacity=20);
+  -moz-opacity: 0.2;
+  -khtml-opacity: 0.2;
+  opacity: 0.2;
+  transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+}
+/* line 1330, sass/common.scss */
+.recommend-box header.paddingTop0 {
+  padding-top: 0px;
+}
+/* line 1334, sass/common.scss */
+.recommend-box > ul {
+  margin: 0px auto;
+  width: 1200px;
+  font-size: 0px;
+  text-align: left;
+}
+/* line 1339, sass/common.scss */
+.recommend-box > ul li {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 285px;
+  height: 281px;
+  position: relative;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+/* line 1346, sass/common.scss */
+.recommend-box > ul li .img-box, .recommend-box > ul li .info-box {
+  display: block;
+  width: 100%;
+}
+/* line 1350, sass/common.scss */
+.recommend-box > ul li .img-box {
+  height: 160px;
+  overflow: hidden;
+  cursor: pointer;
+}
+/* line 1355, sass/common.scss */
+.recommend-box > ul li .img-box p {
+  display: block;
+  position: absolute;
+  top: 42px;
+  left: 0px;
+  z-index: 3;
+  width: 100%;
+  text-align: center;
+}
+/* line 1363, sass/common.scss */
+.recommend-box > ul li .img-box p span {
+  font-size: 22px;
+  line-height: 30px;
+  color: #FFFFFF;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+}
+/* line 1369, sass/common.scss */
+.recommend-box > ul li .img-box p em {
+  display: block;
+  margin: 0px auto 0px;
+  height: 54px;
+  line-height: 54px;
+  color: #FFFFFF;
+  font-size: 54px;
+}
+/* line 1378, sass/common.scss */
+.recommend-box > ul li .img-box a {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 72px;
+  z-index: 3;
+  width: 140px;
+  height: 40px;
+  line-height: 38px;
+  color: #FFFFFF;
+  text-align: center;
+  border: 1px solid #FFFFFF;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  transition: all ease 0s;
+  -moz-transition: all ease 0s;
+  -webkit-transition: all ease 0s;
+  -o-transition: all ease 0s;
+}
+/* line 1394, sass/common.scss */
+.recommend-box > ul li .info-box {
+  position: absolute;
+  top: 160px;
+  z-index: 20;
+  padding-bottom: 13px;
+  border: 1px solid #E9E9E9;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background: #FFFFFF;
+  transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  cursor: pointer;
+}
+/* line 1405, sass/common.scss */
+.recommend-box > ul li .info-box h4 {
+  margin: 12px 16px 9px;
+  font-size: 16px;
+  color: #242629;
+}
+/* line 1410, sass/common.scss */
+.recommend-box > ul li .info-box > span {
+  padding: 0px 16px;
+  font-size: 13px;
+  color: #1AA3EE;
+}
+/* line 1415, sass/common.scss */
+.recommend-box > ul li .info-box .slidebox {
+  margin: 9px 0px 0px;
+  height: 14px;
+  overflow: hidden;
+}
+/* line 1420, sass/common.scss */
+.recommend-box > ul li .info-box p {
+  padding: 0px 16px;
+  font-size: 13px;
+}
+/* line 1423, sass/common.scss */
+.recommend-box > ul li .info-box p.p1 {
+  margin-bottom: 18px;
+  color: #696A70;
+  height: 14px;
+  overflow: hidden;
+}
+/* line 1429, sass/common.scss */
+.recommend-box > ul li .info-box p.p2 {
+  font-size: 12px;
+  line-height: 17px;
+  color: #696A70;
+}
+/* line 1434, sass/common.scss */
+.recommend-box > ul li .info-box p.p3 {
+  margin-top: 14px;
+  line-height: 13px;
+  color: #8C8C8C;
+}
+/* line 1438, sass/common.scss */
+.recommend-box > ul li .info-box p.p3 em {
+  margin-right: 6px;
+  font-size: 14px;
+  color: #BBBBBB;
+}
+/* line 1443, sass/common.scss */
+.recommend-box > ul li .info-box p.p3 span {
+  font-size: 13px;
+  margin-left: 10px;
+}
+/* line 1450, sass/common.scss */
+.recommend-box > ul li.marginRight0 {
+  margin-right: 0px;
+}
+/* line 1454, sass/common.scss */
+.recommend-box > ul li.show .info-box, .recommend-box > ul li:hover .info-box {
+  -moz-box-shadow: -5px 0px 5px -5px rgba(0, 0, 0, 0.2), 5px 0px 5px -5px rgba(0, 0, 0, 0.2), 0px 5px 5px -5px rgba(0, 0, 0, 0.2), 0px -5px 5px -20px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: -5px 0px 5px -5px rgba(0, 0, 0, 0.2), 5px 0px 5px -5px rgba(0, 0, 0, 0.2), 0px 5px 5px -5px rgba(0, 0, 0, 0.2), 0px -5px 5px -20px rgba(0, 0, 0, 0.2);
+  box-shadow: -5px 0px 5px -5px rgba(0, 0, 0, 0.2), 5px 0px 5px -5px rgba(0, 0, 0, 0.2), 0px 5px 5px -5px rgba(0, 0, 0, 0.2), 0px -5px 5px -20px rgba(0, 0, 0, 0.2);
+}
+/* line 1459, sass/common.scss */
+.recommend-box > ul li.show > .img-box a, .recommend-box > ul li:hover > .img-box a {
+  transition: background ease 0.3s;
+  -moz-transition: background ease 0.3s;
+  -webkit-transition: background ease 0.3s;
+  -o-transition: background ease 0.3s;
+}
+/* line 1461, sass/common.scss */
+.recommend-box > ul li.show > .img-box a:hover, .recommend-box > ul li:hover > .img-box a:hover {
+  background: rgba(255, 255, 255, 0.15) none repeat scroll 0 0 !important;
+}
+/* line 1469, sass/common.scss */
+.recommend-box > a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin: 7px auto 55px;
+  width: 280px;
+  height: 45px;
+  line-height: 43px;
+  text-align: center;
+  font-size: 14px;
+  color: #8C8C8C;
+  border: 1px solid #E9E9E9;
+  background: #FFFFFF;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+}
+/* line 1482, sass/common.scss */
+.recommend-box > a:hover {
+  background: #1AA3EE;
+  border: 1px solid #1AA3EE;
+  color: #FFFFFF;
+}
+
+/* line 1490, sass/common.scss */
+.xst-box {
+  background-image: url(../img/img_xst_bg.jpg);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* line 1495, sass/common.scss */
+.xst-box .wrap {
+  position: relative;
+  padding: 67px 0px 70px;
+  text-align: center;
+}
+/* line 1499, sass/common.scss */
+.xst-box .wrap h2 {
+  margin-bottom: 60px;
+  text-align: center;
+  font-size: 38px;
+  line-height: 38px;
+  color: #FFFFFF;
+}
+/* line 1505, sass/common.scss */
+.xst-box .wrap h2 em {
+  font-size: 12px;
+}
+/* line 1507, sass/common.scss */
+.xst-box .wrap h2 em.icon-ic_xst_kh_left {
+  position: relative;
+  top: -19px;
+  margin-right: 2px;
+}
+/* line 1512, sass/common.scss */
+.xst-box .wrap h2 em.icon-ic_xst_kh_right {
+  margin: 0px 10px 0px 8px;
+  position: relative;
+  top: 8px;
+}
+/* line 1518, sass/common.scss */
+.xst-box .wrap h2:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  margin-left: -14px;
+  display: block;
+  width: 0px;
+  height: 0px;
+  border: 14px solid transparent;
+}
+/* line 1530, sass/common.scss */
+.xst-box .wrap h2.white-triangle:before {
+  border-top: 14px solid #FFFFFF;
+}
+/* line 1535, sass/common.scss */
+.xst-box .wrap h2.gray-triangle:before {
+  border-top: 14px solid #F2F2F3;
+}
+/* line 1541, sass/common.scss */
+.xst-box .wrap ul {
+  width: 100%;
+  overflow: hidden;
+}
+/* line 1544, sass/common.scss */
+.xst-box .wrap ul li {
+  width: 250px;
+  text-align: center;
+  float: left;
+  margin: 0px 75px 34px 75px;
+  font-size: 0px;
+}
+/* line 1550, sass/common.scss */
+.xst-box .wrap ul li img {
+  width: 100px;
+  height: 100px;
+}
+/* line 1554, sass/common.scss */
+.xst-box .wrap ul li p {
+  font-size: 18px;
+  color: #fff;
+  margin: 29px 0px 14px;
+}
+/* line 1559, sass/common.scss */
+.xst-box .wrap ul li span {
+  color: #949FAF;
+  line-height: 24px;
+}
+/* line 1565, sass/common.scss */
+.xst-box .wrap > a {
+  position: relative;
+  display: block;
+  margin: 10px auto 0px;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 16px;
+  color: #FFFFFF;
+  background: #1AA3EE;
+  -moz-border-radius: 40px;
+  -webkit-border-radius: 40px;
+  border-radius: 40px;
+  transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+}
+/* line 1578, sass/common.scss */
+.xst-box .wrap > a:hover {
+  filter: alpha(opacity=80);
+  background: #1aa3ee;
+  background: rgba(26, 163, 238, 0.8);
+}
+
+/* line 1588, sass/common.scss */
+.lecturer {
+  background: #FFFFFF;
+  text-align: center;
+}
+/* line 1591, sass/common.scss */
+.lecturer .wrap {
+  padding: 0px 0px 20px 0px;
+  text-align: left;
+}
+/* line 1594, sass/common.scss */
+.lecturer .wrap h2 {
+  padding-top: 70px;
+  margin: 0px 0px 15px;
+  text-align: center;
+  font-size: 38px;
+  color: #242629;
+}
+/* line 1601, sass/common.scss */
+.lecturer .wrap > p {
+  margin: 0px auto 60px;
+  max-width: 784px;
+  text-align: center;
+  font-size: 14px;
+  color: #9B9B9B;
+  line-height: 22px;
+}
+/* line 1609, sass/common.scss */
+.lecturer .wrap div {
+  width: 1020px;
+  margin: 50px auto 0px;
+  padding-bottom: 50px;
+  overflow: hidden;
+  border-bottom: 1px solid #E9E9E9;
+}
+/* line 1615, sass/common.scss */
+.lecturer .wrap div img {
+  width: 122px;
+  height: 122px;
+  margin-right: 40px;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  float: left;
+  border: 1px solid #E9E9E9;
+}
+/* line 1623, sass/common.scss */
+.lecturer .wrap div h3 {
+  margin: 13px 0px 15px;
+  font-size: 22px;
+  line-height: 22px;
+  color: #242629;
+}
+/* line 1628, sass/common.scss */
+.lecturer .wrap div h3 span {
+  position: relative;
+  z-index: 2;
+  top: -2px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-left: 10px;
+  padding: 3px 4px;
+  border: 1px solid #FFBF46;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 12px;
+}
+/* line 1639, sass/common.scss */
+.lecturer .wrap div h3 span.gold {
+  border: 1px solid #FFBF46;
+  color: #EAA116;
+}
+/* line 1643, sass/common.scss */
+.lecturer .wrap div h3 span.full-time {
+  border: 1px solid #48C490;
+  color: #48C490;
+}
+/* line 1649, sass/common.scss */
+.lecturer .wrap div p {
+  padding-left: 160px;
+  font-size: 14px;
+}
+/* line 1652, sass/common.scss */
+.lecturer .wrap div p.job {
+  color: #242629;
+}
+/* line 1655, sass/common.scss */
+.lecturer .wrap div p.major {
+  margin: 2px 0px 11px;
+  color: #696A70;
+  line-height: 26px;
+}
+/* line 1660, sass/common.scss */
+.lecturer .wrap div p.case {
+  color: #696A70;
+}
+/* line 1662, sass/common.scss */
+.lecturer .wrap div p.case > span {
+  position: relative;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  padding: 4px 5px;
+  margin-right: 10px;
+  background: #1AA3EE;
+  color: #FFFFFF;
+  font-size: 12px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 1674, sass/common.scss */
+.lecturer .wrap div.last {
+  border: none;
+}
+
+/* line 1681, sass/common.scss */
+.graphic h2 {
+  margin-bottom: 20px;
+  font-size: 38px;
+  line-height: 50px;
+  color: #242629;
+}
+/* line 1687, sass/common.scss */
+.graphic p {
+  font-size: 14px;
+  line-height: 30px;
+  color: #646466;
+}
+/* line 1692, sass/common.scss */
+.graphic .wrap {
+  overflow: hidden;
+}
+/* line 1694, sass/common.scss */
+.graphic .wrap .left-box {
+  float: Left;
+  padding-left: 70px;
+  width: 56%;
+}
+/* line 1699, sass/common.scss */
+.graphic .wrap .right-box {
+  float: Left;
+  width: 44%;
+}
+/* line 1705, sass/common.scss */
+.graphic.capacity img {
+  margin-top: 80px;
+  margin-bottom: 90px;
+}
+/* line 1709, sass/common.scss */
+.graphic.capacity h2 {
+  margin-top: 117px;
+}
+/* line 1714, sass/common.scss */
+.graphic.graduate img {
+  margin-top: 85px;
+  margin-left: 77px;
+  margin-bottom: 85px;
+}
+/* line 1719, sass/common.scss */
+.graphic.graduate h2 {
+  margin-top: 112px;
+}
+/* line 1724, sass/common.scss */
+.graphic.security img {
+  margin-top: 60px;
+  margin-left: 6px;
+  margin-bottom: 80px;
+}
+/* line 1729, sass/common.scss */
+.graphic.security h2 {
+  margin-top: 94px;
+}
+/* line 1734, sass/common.scss */
+.graphic.profession img {
+  margin-top: 85px;
+  margin-left: 77px;
+  margin-bottom: 85px;
+}
+/* line 1739, sass/common.scss */
+.graphic.profession h2 {
+  margin-top: 81px;
+}
+
+/* line 1744, sass/common.scss */
+.dream-box {
+  text-align: center;
+  background: #FFFFFF;
+}
+/* line 1747, sass/common.scss */
+.dream-box header {
+  padding: 70px 0px 40px;
+  text-align: center;
+}
+/* line 1750, sass/common.scss */
+.dream-box header h2 {
+  font-size: 38px;
+  color: #242629;
+}
+/* line 1754, sass/common.scss */
+.dream-box header p {
+  margin-top: 17px;
+  font-size: 13px;
+  line-height: 20px;
+  color: #9B9B9B;
+}
+/* line 1761, sass/common.scss */
+.dream-box ul {
+  padding-left: 87px;
+  margin: 0px auto 80px;
+  max-width: 1200px;
+  font-size: 0px;
+  text-align: left;
+}
+/* line 1767, sass/common.scss */
+.dream-box ul li {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 242px;
+  height: 208px;
+  position: relative;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+/* line 1774, sass/common.scss */
+.dream-box ul li img {
+  position: relative;
+  width: 242px;
+  border: 1px solid #E9E9E9;
+}
+/* line 1779, sass/common.scss */
+.dream-box ul li > a {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 242px;
+  height: 132px;
+  font-size: 18px;
+  text-align: center;
+  line-height: 130px;
+  color: #FFFFFF;
+  filter: alpha(opacity=90);
+  background: #1AA3EE \9;
+  background: rgba(26, 163, 238, 0.9) none repeat scroll 0 0 !important;
+  transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  cursor: default;
+}
+/* line 1797, sass/common.scss */
+.dream-box ul li > div {
+  position: absolute;
+  left: 0px;
+  top: 131px;
+  z-index: 20;
+  display: block;
+  width: 100%;
+  background: #F7F7F7;
+  border: 1px solid #F7F7F7;
+  border-top: none;
+  transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  -moz-box-shadow: -5px 0px 5px -5px #F7F7F7, 5px 0px 5px -5px #F7F7F7, 0px 5px 5px -5px #F7F7F7, 0px -5px 5px -20px #F7F7F7;
+  -webkit-box-shadow: -5px 0px 5px -5px #F7F7F7, 5px 0px 5px -5px #F7F7F7, 0px 5px 5px -5px #F7F7F7, 0px -5px 5px -20px #F7F7F7;
+  box-shadow: -5px 0px 5px -5px #F7F7F7, 5px 0px 5px -5px #F7F7F7, 0px 5px 5px -5px #F7F7F7, 0px -5px 5px -20px #F7F7F7;
+}
+/* line 1809, sass/common.scss */
+.dream-box ul li > div h4 {
+  margin: 17px 16px 4px;
+  font-size: 14px;
+  color: #242629;
+}
+/* line 1814, sass/common.scss */
+.dream-box ul li > div .slidebox {
+  margin: 8px 18px 20px;
+  height: 14px;
+  overflow: hidden;
+}
+/* line 1819, sass/common.scss */
+.dream-box ul li > div p {
+  color: #696A70;
+}
+/* line 1821, sass/common.scss */
+.dream-box ul li > div p.p1 {
+  margin-bottom: 20px;
+  line-height: 14px;
+  font-size: 13px;
+}
+/* line 1826, sass/common.scss */
+.dream-box ul li > div p.p2 {
+  font-size: 12px;
+  padding-top: 17px;
+  line-height: 17px;
+  border-top: 1px solid #CED0D5;
+  border-top: 1px solid rgba(206, 208, 213, 0.3);
+  transition: padding 0s ease;
+  -moz-transition: padding 0s ease;
+  -webkit-transition: padding 0s ease;
+  -o-transition: padding 0s ease;
+}
+/* line 1836, sass/common.scss */
+.dream-box ul li.marginRight0 {
+  margin-right: 0px;
+}
+/* line 1840, sass/common.scss */
+.dream-box ul li.show > div, .dream-box ul li:hover > div {
+  border: 1px solid #e9e9e9;
+  border-top: none;
+  -moz-box-shadow: -5px 0px 5px -5px #C2C2C2, 5px 0px 5px -5px #C2C2C2, 0px 5px 5px -5px #C2C2C2, 0px -5px 5px -20px #C2C2C2;
+  -webkit-box-shadow: -5px 0px 5px -5px #C2C2C2, 5px 0px 5px -5px #C2C2C2, 0px 5px 5px -5px #C2C2C2, 0px -5px 5px -20px #C2C2C2;
+  box-shadow: -5px 0px 5px -5px #C2C2C2, 5px 0px 5px -5px #C2C2C2, 0px 5px 5px -5px #C2C2C2, 0px -5px 5px -20px #C2C2C2;
+}
+/* line 1845, sass/common.scss */
+.dream-box ul li.show > img, .dream-box ul li:hover > img {
+  border: 1px solid #e9e9e9;
+  -moz-box-shadow: -5px 0px 5px -5px #C2C2C2, 5px 0px 5px -5px #C2C2C2, 0px 5px 5px -5px #C2C2C2, 0px -5px 5px -20px #C2C2C2;
+  -webkit-box-shadow: -5px 0px 5px -5px #C2C2C2, 5px 0px 5px -5px #C2C2C2, 0px 5px 5px -5px #C2C2C2, 0px -5px 5px -20px #C2C2C2;
+  box-shadow: -5px 0px 5px -5px #C2C2C2, 5px 0px 5px -5px #C2C2C2, 0px 5px 5px -5px #C2C2C2, 0px -5px 5px -20px #C2C2C2;
+}
+/* line 1849, sass/common.scss */
+.dream-box ul li.show > a, .dream-box ul li:hover > a {
+  filter: alpha(opacity=80);
+  background: #1AA3EE \9;
+  background: rgba(26, 163, 238, 0.8) none repeat scroll 0 0 !important;
+}
+/* line 1857, sass/common.scss */
+.dream-box:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 1863, sass/common.scss */
+.sys-evaluate {
+  height: 484px;
+  background-image: url(../img/img_dn_bg.jpg);
+  background-image: -webkit-image-set(url(../img/img_dn_bg.jpg) 1x, url(../img/img_dn_bg@2x.jpg) 2x);
+  background-image: -moz-image-set(url(../img/img_dn_bg.jpg) 1x, url(../img/img_dn_bg@2x.jpg) 2x);
+  background-image: -o-image-set(url(../img/img_dn_bg.jpg) 1x, url(../img/img_dn_bg@2x.jpg) 2x);
+  background-image: -ms-image-set(url(../img/img_dn_bg.jpg) 1x, url(../img/img_dn_bg@2x.jpg) 2x);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* line 1873, sass/common.scss */
+.sys-evaluate .shuffling {
+  width: 100%;
+  height: 484px;
+  position: relative;
+  overflow: hidden;
+}
+/* line 1879, sass/common.scss */
+.sys-evaluate .shuffling .sequence-canvas li {
+  height: 484px;
+  min-height: 484px;
+  overflow: hidden;
+}
+/* line 1885, sass/common.scss */
+.sys-evaluate .shuffling .pager {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 220px;
+  z-index: 99;
+}
+/* line 1891, sass/common.scss */
+.sys-evaluate .shuffling .pager > div {
+  width: 45px;
+  height: 90px;
+  position: absolute;
+  top: 3px;
+  cursor: pointer;
+  line-height: 90px;
+  text-align: center;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  visibility: hidden;
+  filter: alpha(opacity=0);
+  background: #FFFFFF\9;
+  background: rgba(255, 255, 255, 0) none repeat scroll 0 0 !important;
+  transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+}
+/* line 1905, sass/common.scss */
+.sys-evaluate .shuffling .pager > div em {
+  color: transparent;
+  font-size: 38px;
+  vertical-align: middle;
+  transition: color ease 0.3s;
+  -moz-transition: color ease 0.3s;
+  -webkit-transition: color ease 0.3s;
+  -o-transition: color ease 0.3s;
+}
+/* line 1911, sass/common.scss */
+.sys-evaluate .shuffling .pager > div.prev {
+  left: 0px;
+}
+/* line 1914, sass/common.scss */
+.sys-evaluate .shuffling .pager > div.next {
+  right: 0px;
+}
+/* line 1917, sass/common.scss */
+.sys-evaluate .shuffling .pager > div:hover {
+  color: #FFFFFF;
+  filter: alpha(opacity=20);
+  background: #FFFFFF\9;
+  background: rgba(255, 255, 255, 0.2) none repeat scroll 0 0 !important;
+}
+/* line 1925, sass/common.scss */
+.sys-evaluate .shuffling .sequence-pagination {
+  position: absolute;
+  bottom: 30px;
+  z-index: 99;
+  text-align: center;
+  width: 100%;
+  font-size: 0px;
+}
+/* line 1932, sass/common.scss */
+.sys-evaluate .shuffling .sequence-pagination > li {
+  padding: 0px 5px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+/* line 1935, sass/common.scss */
+.sys-evaluate .shuffling .sequence-pagination > li em {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  cursor: pointer;
+  color: #fff;
+  font-size: 12px;
+}
+/* line 1946, sass/common.scss */
+.sys-evaluate .shuffling:hover .pager > div {
+  filter: alpha(opacity=10);
+  background: #FFFFFF\9;
+  background: rgba(255, 255, 255, 0.1) none repeat scroll 0 0 !important;
+}
+/* line 1950, sass/common.scss */
+.sys-evaluate .shuffling:hover .pager > div em {
+  color: #fff;
+}
+/* line 1953, sass/common.scss */
+.sys-evaluate .shuffling:hover .pager > div:hover {
+  color: #FFFFFF;
+  filter: alpha(opacity=20);
+  background: #FFFFFF\9;
+  background: rgba(255, 255, 255, 0.2) none repeat scroll 0 0 !important;
+}
+/* line 1960, sass/common.scss */
+.sys-evaluate .shuffling:hover .pager .prev {
+  color: #FFFFFF;
+  visibility: visible;
+}
+/* line 1964, sass/common.scss */
+.sys-evaluate .shuffling:hover .pager .next {
+  color: #FFFFFF;
+  visibility: visible;
+}
+/* line 1970, sass/common.scss */
+.sys-evaluate .shuffling a {
+  display: block;
+  text-align: center;
+  height: 444px;
+  width: 1200px !important;
+  cursor: default;
+}
+/* line 1976, sass/common.scss */
+.sys-evaluate .shuffling a > img {
+  margin-top: 100px;
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+}
+/* line 1982, sass/common.scss */
+.sys-evaluate .shuffling a h2 {
+  margin: 30px auto 24px;
+  max-width: 800px;
+  max-height: 93px;
+  overflow: hidden;
+  font-size: 34px;
+  line-height: 44px;
+  color: #ffffff;
+  text-align: center;
+}
+/* line 1992, sass/common.scss */
+.sys-evaluate .shuffling a p {
+  font-size: 16px;
+  color: #FFFFFF;
+}
+
+/* line 1999, sass/common.scss */
+.meet-self {
+  height: 699px;
+  background-image: url(../img/img_zycs_bg.jpg);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* line 2005, sass/common.scss */
+.meet-self > div {
+  text-align: center;
+  padding-top: 269px;
+}
+/* line 2008, sass/common.scss */
+.meet-self > div h2 {
+  display: block;
+  font-size: 48px;
+  line-height: 48px;
+  color: #FFFFFF;
+}
+/* line 2014, sass/common.scss */
+.meet-self > div a {
+  position: relative;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-top: 66px;
+  width: 258px;
+  height: 60px;
+  line-height: 56px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  -moz-border-radius: 40px;
+  -webkit-border-radius: 40px;
+  border-radius: 40px;
+  transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+}
+/* line 2027, sass/common.scss */
+.meet-self > div a.a1 {
+  margin-right: 30px;
+  color: #696A70;
+  background: #ffffff;
+  border: 1px solid #FFFFFF;
+  transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+}
+/* line 2033, sass/common.scss */
+.meet-self > div a.a1:hover {
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+}
+/* line 2037, sass/common.scss */
+.meet-self > div a.a2 {
+  color: #FFFFFF;
+  background: transparent;
+  border: 1px solid #ffffff;
+  transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+}
+/* line 2042, sass/common.scss */
+.meet-self > div a.a2:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+}
