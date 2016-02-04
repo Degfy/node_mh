@@ -1,0 +1,292 @@
+<!-- 报名预约 -->
+<section class="service-detail">
+    <div class="wrap service_f">
+        <h2>课程服务详情<a name="course_detail" class="anchorItem"></a></h2>
+        <ul>
+            <?php if(!empty($courseData['extend'])){$paid = 0;foreach($courseData['extend'] as $l => $v){if($l==2) continue; ?>
+            <li class="service_li">
+                <h4><?php echo $levels[$l] ?></h4>
+                <p><i>￥</i><span><?php echo $v['price'] ?></span><em><?php echo $v['price_show'] ?></em></p>
+                <span class="mark"><?php echo $v['subhead'] ?></span>
+                <dl>
+                    <?php foreach($levelItems[$l] as $kk => $vv){ ?>
+                    <dd<?php echo $kk % 2 == 0 ? ' class="event-bg"':'' ?>>
+                        <?php if(!empty($vv)){ ?>
+                        <em class="icon-ic_check"></em><span><?php echo $vv ?></span>
+                        <?php } ?>
+                    </dd>
+                    <?php } ?>
+                </dl>
+                <?php if(empty($v['ready'])){ ?>
+                    <?php if(empty($token)){ ?>
+                    <a class="btn_s redbtn applypie" href="<?php echo STUDENT_HOST.'user/login' ?>">
+                        <?php echo empty($v['signupbtn'])?'预订优惠 即刻申领':$v['signupbtn'] ?>
+                    </a>
+                    <?php }elseif(empty($signupData[$l]['signup'])){ ?>
+                    <a class="btn_s redbtn applypie" href="javascript:void(0)" level="<?php echo $l ?>">
+                        <?php echo empty($v['signupbtn'])?'预订优惠 即刻申领':$v['signupbtn'] ?>
+                    </a>
+                    <?php }else{ ?>
+                        <a class="btn_s graybtn applypie" href="javascript:void(0)">已预约</a>
+                    <?php } ?>
+                <?php }else{ ?>
+                    <?php if(empty($signupData[$l]['signup'])){ ?>
+                        <?php if(empty($token)){ ?>
+                        <a class="btn_s redbtn applypie" href="<?php echo STUDENT_HOST.'user/login' ?>">
+                        <?php }else{ ?>
+                        <a class="btn_s redbtn applypie" href="javascript:void(0)" level="<?php echo $l ?>">
+                        <?php } ?>
+                            <?php echo empty($v['signupbtn'])?'即刻报名':$v['signupbtn'] ?>
+                        </a>
+                    <?php }elseif($signupData[$l]['signup'] > 0 && empty($signupData[$l]['pay'])){ ?>
+                        <?php if($paid > 0){ ?>
+                            <a class="btn_s redbtn applypie" href="<?php echo STUDENT_HOST.'purcomfirm/'.$courseid.'/'.$l ?>">即刻升级</a>
+                        <?php }else{ ?>
+                            <a class="btn_s redbtn applypie" href="<?php echo STUDENT_HOST.'purcomfirm/'.$courseid.'/'.$l ?>">去支付</a>
+                        <?php } ?>
+                    <?php }elseif($signupData[$l]['signup'] > 0 && $signupData[$l]['pay'] > 0){$paid = 1; ?>
+                        <a class="btn_s graybtn applypie" href="javascript:void(0)">已参加</a>
+                    <?php } ?>
+                <?php } ?>
+            </li>
+            <?php }} ?>
+        </ul>
+        <div class="consultation">
+            <h3>开始，遇见更美好的自己。</h3>
+            <p><?php echo $courseData['consultant'] ?></p>
+            <a class="applypie dash-btn" target="_blank"href="<?php echo sprintf(KF_URL,'1%E5%AF%B91','mhxy-1vs1') ?>">免费一对一专业咨询</a>
+            <a class="applypie solid-btn"target="_blank" href="<?php echo sprintf(KF_URL,'%E6%A2%A6%E6%83%B3','mhxy-dream') ?>">和我聊聊你的职业理想</a>
+        </div>
+    </div>
+</section>
+
+<!--点击报名，弹出层-->
+<?php if(!empty($courseData['extend'])){foreach($courseData['extend'] as $l => $v){ ?>
+<div id="signup-<?php echo $l ?>" class="sign-tip service_f sign-tip-bm">
+    <div class="pagebg"></div>
+    <div class="sign-content">
+        <div class="sign-left service_li is-visible">
+            <div class="l-top">
+                <p><i>￥</i><span><?php echo $v['price'] ?></span><em><?php echo $v['price_show'] ?></em></p>
+                <span class="mark"><?php echo $v['subhead'] ?></span>
+            </div>
+            <dl>
+                <?php foreach($levelItems[$l] as $kk => $vv){ ?>
+                    <dd<?php echo $kk % 2 == 0 ? ' class="event-bg"':'' ?>>
+                        <?php if(!empty($vv)){ ?>
+                        <em class="icon-ic_check"></em><span><?php echo $vv ?></span>
+                        <?php } ?>
+                    </dd>
+                <?php } ?>
+            </dl>
+        </div>
+        <div class="right_from">
+            <header>
+                <span class="sign-close "><em class="icon-guanbi"></em></span>
+                <h2><?php echo (empty($v['ready'])?'预约':'报名').$courseData['name'].$levels[$l] ?></h2>
+            </header>
+            <aside>
+                <div class="half-width">
+                    <label for="userName">真实姓名</label>
+                    <input type="text" name="userName" placeholder="请输入真实姓名" limit="2,32"/>
+                    <p class="error-tip"><em class="icon-jignshi"></em><span></span></p>
+                </div>
+                <div class="half-width right">
+                    <label for="qq">QQ</label>
+                    <input type="text" name="qq" placeholder="请输入QQ号" pattern="^[1-9][0-9]{4,}$"/>
+                    <p class="error-tip"><em class="icon-jignshi"></em><span></span></p>
+                </div>
+                <div class="half-width" style="clear:both;">
+                    <label for="study-mb">学习目标</label>
+                    <select name="study-mb">
+                        <?php foreach($targets as $vv){ ?>
+                        <option value="<?php echo $vv ?>"><?php echo $vv ?></option>
+                        <?php } ?>
+                    </select>
+                    <p class="error-tip"><em class="icon-jignshi"></em><span></span></p>
+                </div>
+                <div class="half-width right">
+                    <label for="study-jc">学习基础</label>
+                    <select name="study-jc">
+                        <?php foreach($basiss as $vv){ ?>
+                        <option value="<?php echo $vv ?>"><?php echo $vv ?></option>
+                        <?php } ?>>
+                    </select>
+                    <p class="error-tip"><em class="icon-jignshi"></em><span></span></p>
+                </div>
+                <div class="submit-box">
+                    <input type="submit" class="applypie" value="提交<?php echo empty($v['ready'])?'预约':'报名' ?>资料" url="<?php echo '/api/www/signup' ?>"/>
+                    <p class="error-tip"><em class="icon-jignshi"></em><span></span></p>
+                    <input type="hidden" class="hiddenToken" value="<?php echo $token ?>">
+                    <input type="hidden" class="hiddenCourseid" value="<?php echo $courseid ?>">
+                    <input type="hidden" class="hiddenReady" value="<?php echo $v['ready'] ?>">
+                    <input type="hidden" class="hiddenPay" value="<?php echo STUDENT_HOST.'purcomfirm/'.$courseid.'/'.$l ?>">
+                </div>
+            </aside>
+            <!-- 预约成功提示 -->
+            <section style="display:none" class="success">
+                <em class="icon-XST-wancheng"></em>
+                <span>预约成功</span>
+                <p>预约成功！感谢你的预约，稍后我们的工作人员将与您联系。</p>
+            </section>
+            <footer>
+                <ul>
+                    <li>
+                        <span>联系客服</span>
+                        <p>
+                            <?php if(empty($v['ready'])){ ?>
+                            <a href="<?php echo sprintf(KF_URL,'%E9%A2%84%E7%BA%A6','mhxy-yuyue') ?>">
+                            <?php }else{ ?>
+                            <a href="<?php echo sprintf(KF_URL,'%E6%8A%A5%E5%90%8D','mhxy-baoming') ?>">
+                            <?php } ?>
+                                <em class="icon-ic_khwawa"></em><span>在线客服</span>
+                            </a>
+                        </p>
+                    </li>
+                    <li><span>客服电话</span><p class="p2">400 000 999</p></li>
+                </ul>
+            </footer>
+        </div>
+    </div>
+</div>
+<?php }} ?>
+
+<script type="text/javascript">
+//弹出层居中
+function signupCenter(dom){
+    var left = ($(window).width() - dom.width()) / 2;
+    var top = ($(window).height() - dom.height()) / 2;
+    dom.css({position: "fixed", left: left + 'px', top: top + 'px'});
+}
+function valid(dom){
+    var val = $.trim(dom[0].value);
+    var name = $.trim(dom.attr('name'));
+    if(val == ''){
+        if(name == 'userName'){
+            printError(dom, '请输入真实姓名');
+        }else if(name == 'qq'){
+            printError(dom, '请输入QQ号');
+        }
+        return false;
+    }
+    if(dom.attr('limit')){
+        var limits = dom.attr('limit').split(',', 2);
+        var min = limits[0], max = limits[1] ? limits[1] : 0;
+        if(val.length < min || (max > 0 && val.length > max)){
+            printError(dom, '请输入'+min+(max>0?'-'+max+'位':'位以上')+'中英文');
+            return false;
+        }
+    }
+    if(dom.attr('pattern')){
+        var reg = new RegExp(dom.attr('pattern'));
+        if(!reg.test(val)){
+            if(name == 'qq'){printError(dom, '请输入5-12位QQ号');}
+            return false;
+        }
+    }
+    cleanError(dom);
+    return true;
+}
+function printError(dom, msg){
+    dom.parent('div').addClass('error');
+    dom.parent('div').find('p>span').html(msg);
+}
+function cleanError(dom){
+    dom.parent('div').removeClass('error');
+    dom.parent('div').find('p>span').html('');
+}
+
+function commit(dom, url, token, type, courseid, level, truename, qq, target, basis){
+    $.ajax(url + '?token=' + token, {
+        type: 'post',
+        data: {
+            'type': type,
+            'courseid': courseid,
+            'studylevel': level,
+            'truename': truename,
+            'qq': qq,
+            'target': target,
+            'basis': basis
+        },
+        //headers:{'X-Auth-Token': token},
+        success: function(rs){
+            if(rs.error_code == 0) {
+                if (type == 1) {
+                    $('#signup-' + level + ' aside').hide();
+                    $('#signup-' + level + ' .success').show();
+                    setTimeout(function () {
+                        dom.parent().parent().parent().find('.sign-close').click();
+                        window.location.reload();
+                    }, 3000);
+                } else {
+                    window.location.href = dom.parent().find('.hiddenPay').val()
+                }
+            }else if(rs.error_code == 103 || rs.error_code == 104){
+                window.location.href = '<?php echo STUDENT_HOST.'user/login' ?>';
+            }else{
+                dom.parent().find('p>span').html('哎呀，提交失败啦！');
+            }
+        }
+    });
+}
+
+//打开弹出层
+$('.service-detail a[level]').each(function(){
+    var level = $(this).attr('level');
+    $(this).on('click', function(){
+        $('#signup-' + level).addClass('is-visible');
+        var isIe8=judgeie89();
+        var selectorStr='#signup-' + level +" input";
+        signupCenter($('.sign-content'));
+        //输入check
+        $('#signup-' + level + ' aside :text,select').on('blur', function(){valid($(this));});
+        //表单提交
+        $('#signup-' + level + ' :submit').on('click', function(){
+            var check = true;
+            $(this).parent().parent().find(':text,select').each(function(){
+                check &= valid($(this));
+            });
+            if(!check) return false;
+            //提交
+            var type = $(this).parent().find('.hiddenReady').val() > 0 ? 0 : 1;
+            commit(
+                $(this),
+                $(this).attr('url'),
+                $(this).parent().find('.hiddenToken').val(),
+                type,
+                $(this).parent().find('.hiddenCourseid').val(),
+                level,
+                $.trim($(this).parent().parent().find('input[name=userName]')[0].value),
+                $.trim($(this).parent().parent().find('input[name=qq]')[0].value),
+                $(this).parent().parent().find('select[name=study-mb]').val(),
+                $(this).parent().parent().find('select[name=study-jc]').val()
+            );
+        });
+    });
+});
+//关闭弹出层
+$('.sign-tip-bm .sign-close').each(function(){
+    $(this).on('click', function(){
+        $('.sign-tip-bm').removeClass('is-visible');
+        $('.sign-tip-bm  aside :text,select').off('blur').val('');
+        $('.sign-tip-bm :submit').off('click');
+    });
+});
+</script>
+
+
+<!--底部报名-->
+<section class="fixbar fixed">
+    <nav class="wrap">
+        <ul>
+            <li class="we_advantage"><a href="/course/<?php echo $courseid ?>#we_advantage">我们的优势</a></li>
+            <li class="teacher_strength"><a href="/course/<?php echo $courseid ?>#teacher_strength">师资力量</a></li>
+            <li class="curriculum_system"><a href="/course/<?php echo $courseid ?>#curriculum_system">学习规划</a></li>
+            <li class="learning_plan"><a href="/course/<?php echo $courseid ?>#learning_plan">课程大纲</a></li>
+            <li class="employment_students"><a href="/course/<?php echo $courseid ?>#employment_students">就业学员</a></li>
+            <li class="employment_security"><a href="/course/<?php echo $courseid ?>#employment_security">保障就业</a></li> 
+            <li class="course_detail"><a href="/course/<?php echo $courseid ?>#course_detail">服务详情</a></li>
+        </ul>
+        <div><a class="go_bm applypie" href="/course/<?php echo $courseid ?>#course_detail">即刻报名参加</a></div>
+    </nav>
+</section>

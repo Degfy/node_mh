@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <base href="<?php echo HOST ?>">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <title><?php echo $setting['title'] ?></title>
+    <meta name="keywords" content="<?php echo $setting['keywords'] ?>">
+    <meta name="description" content="<?php echo $setting['description'] ?>">
+    <meta name="baidu-site-verification" content="XehgMpxsQ7" />
+    <script type="text/javascript" src="/public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/public/js/jquery.cookie.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/public/js/PIE/PIE_IE678.js"></script>
+    <script type="text/javascript" src="/public/js/html5shiv.js"></script>
+    <script type="text/javascript" src="/public/js/jquery.placeholder.js"></script>
+    <![endif]-->
+    <!--[if IE 9]>
+    <script type="text/javascript" src="/public/js/PIE/PIE_IE9.js"></script>
+    <script type="text/javascript" src="/public/js/jquery.placeholder.js"></script>
+    <![endif]-->
+    <link rel="Shortcut Icon" href="/public/img/log.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/public/css/main.css">
+    <link rel="stylesheet" href="/public/css/ico.css">
+    <link rel="stylesheet" href="/public/css/animate.css">
+</head>
+<!-- 每个页面增加对应的 body pagename="值"-->
+<body pagename="<?php echo $tag ?>">
+<!-- 每个页面增加对应的 div class="page 值" -->
+<div class="page <?php echo $tag ?>">
+    <div class="page-header">
+        <!-- 搜索页面、列表页面、友情链接页面去掉class transparentBg-->
+        <header class="topbar<?php echo in_array($tag,array('index','detail','about'))?' transparentBg':'' ?>">
+            <nav>
+                <h1>
+                    <a href="/"></a>
+                </h1>
+                <ul>
+                    <li class="navItem"><a href="/">首页</a></li>
+                    <li class="navItem"><a href="/list">职业课程</a></li>
+                    <li class="navItem"><a href="/list/1">系统自学</a></li>
+                    <li class="navItem"><a href="/list/2">实训强化</a></li>
+                    <li class="navItem"><a href="/list/3">就业直通</a></li>
+                </ul>
+                <div class="loginHTML">
+                    <!--未登录显示  -->
+                    <?php if(empty($user)){ ?>
+                    <a href="<?php echo STUDENT_HOST.'user/login' ?>">登录</a>
+                    <a href="<?php echo STUDENT_HOST.'user/register' ?>">注册</a>
+                    <div class="logintip">
+                        <img src="/public/img/logoTip@2x.png" width="128px" height="71px"usemap="#userlogintip"  hidefocus="true" />
+                        <map name="userlogintip">
+                            <area shape="circle"  coords="117,16,12" href="javascript:close('.logintip');" onfocus="blur(this);"> 
+                        </map>
+                    </div>
+                    <!-- 已登录显示 -->
+                    <? }else{ ?>
+                    <section class="user-prop">
+                        <a href="javascript:void(0);" class="avatar-link">
+                            <span class="applypie">
+                                <img src="<?php echo empty($user['avatar'])?'/public/img/default-user.jpg':$user['avatar'] ?>" class="applypie">
+                            </span>
+                            <?php if($user['count'] > 0){ ?>
+                            <em class="ico-y applypie"></em>
+                            <?php } ?>
+                        </a>
+                        <div class="per">
+                            <em class="triangle"></em>
+                            <div class="per-c applypie">
+                                <div class="pre-name"><span><?php echo $user['name'] ?></span></div>
+                                <?php if(!empty($user['current'])){ ?>
+                                <div class="pre-his">
+                                    <a href="<?php echo STUDENT_HOST.'course/'.$user['current']['courseid'].'/syslearn' ?>">
+                                        <em class="icon-ic_top_xl_1"></em>
+                                        <span class="pre-tip">进入课程主页</span>
+                                        <span class="coure-name"><?php echo $user['current']['name'] ?></span>
+                                    </a>
+                                </div>
+                                <?php } ?>
+                                <div class="pre-item">
+                                    <a href="<?php echo STUDENT_HOST.'ucenter/course' ?>"><em class="icon-ic_top_xl_2"></em><span>我的课程</span></a>
+                                    <a href="<?php echo STUDENT_HOST.'ucenter/message' ?>"><em class="icon-ic_top_xl_3"></em><span>消息</span>
+                                        <?php if($user['count'] > 0){ ?>
+                                        <em class="dot applypie"></em>
+                                        <?php } ?>
+                                    </a>
+                                    <a href="<?php echo STUDENT_HOST.'ucenter/account' ?>"><em class="icon-ic_top_xl_4"></em><span>账号管理</span></a>
+                                    <a href="javascript:void(0);" class="logout"><em class="icon-ic_top_xl_5"></em><span>退出</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <script type="text/javascript">
+                    $('.logout').on('click', function(){
+                        $.removeCookie('user', {domain: '<?php echo COOKIE_HOST ?>', path: '/'});
+                        $.removeCookie('current', {domain: '<?php echo COOKIE_HOST ?>', path: '/'});
+                        window.location.reload();
+                    });
+                    </script>
+                    <?php } ?>
+                </div>
+                <!-- 首页去掉class spread-->
+                <div class="soform applypie<?php echo $tag!='index'?' spread':'' ?>" id="soform">
+                <form action="/list" method="GET">
+                    <input name="keywords" id="k" class="search" type="text" pre-value="<?php echo $setting['searchkey'] ?>" placeholder="<?php echo $setting['searchdsc'] ?>">
+                    <input type="submit" class="in_submit" onclick="if($('#k').val()=='')$('#k').val($('#k').attr('pre-value'))">
+                    <em class="icon-search ico-serche" id="ico-serche"></em>
+                </form>
+                </div>
+            </nav>
+        </header>
+    </div>

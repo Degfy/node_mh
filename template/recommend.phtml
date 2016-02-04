@@ -1,0 +1,29 @@
+<?php if(!empty($recommends['data'])){ ?>
+<ul id="courselistRec">
+    <?php foreach($recommends['data'] as $k => $v){ ?>
+    <li class="showItme<?php echo ($k + 1) % 4 == 0 ? ' marginRight0':'' ?>">
+        <div class="img-box">
+            <img src="<?php echo $v['pic'] ?>" width="285px">
+            <p class="tit"><span><?php echo $v['name'] ?></span><em class="<?php echo $v['iconstyle'] ?>"></em></p>
+            <a class="btn" href="/course/<?php echo $v['courseid'] ?>" >即刻学习</a>
+        </div>
+        <div class="info-box">
+            <h4><?php echo $v['name'] ?></h4><span>月薪<?php echo $v['salary'] ?></span>
+            <div class="slidebox">
+                <p class="p1"><?php echo $v['oneword'] ?></p>
+                <p class="p2"><?php echo str_cut($v['description'], 118) ?></p>
+            </div>
+            <p class="p3"><em class="icon-ic_time"></em><?php echo $v['hours'] ?>课时<span><?php echo $v['longtime'] ?>分钟</span></p>
+        </div>
+    </li>
+    <?php } ?>
+</ul>
+<?php } ?>
+
+<script type="application/javascript">
+$('.showItme').each(function(){
+    $(this).on('click', function(){
+        window.location.href = $(this).find('a').attr('href');
+    });
+});
+</script>

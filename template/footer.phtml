@@ -1,0 +1,138 @@
+    <!--侧边栏滚动顶部-->
+    <?php if($tag != 'error'){ ?>
+    <section class="sidebar">
+        <div class="sider-content">
+            <a class="red consult applypie" href="<?php echo sprintf(KF_URL,'%E6%82%AC%E6%B5%AE%E6%A1%86','mhxy-xuanfukuang') ?>" target="_blank">
+                <em class="icon-ic_leftbar_online_lx em1"></em>
+                <div class="side_b">
+                    <div class="applypie">
+                        <em>在线咨询</em>
+                        <span><em class="e1"></em><em class="e2"></em></span>
+                    </div>
+                </div>
+            </a>
+            <a class="red consult applypie" href="<?php echo QQ_URL ?>" target="_blank">
+                <em class="icon-ic_leftbar_qq em2"></em>
+                <div class="side_b">
+                    <div class="applypie">
+                        <em >QQ咨询</em>
+                        <span><em class="e1"></em><em class="e2"></em></span>
+                    </div>
+                </div>
+            </a>
+            <a class="consult applypie" href="javascript:void(0);">
+                <em class="icon-ic_leftbar_phone em3"></em>
+                <div class="side_b tel">
+                    <div class="applypie"><em>免费电话：400 920 7597</em><span><em class="e1"></em><em class="e2"></em></span></div>
+                </div>
+            </a>
+            <a class="consult applypie" href="javascript:void(0);">
+                <em class="icon-ic_leftbar_gz em4"></em>
+                <div class="side_b weixin">
+                    <div class="applypie">
+                        <img src="/public/img/img_leftbar_ewm.png" style="width:85px;height:85px;">
+                        <p>扫码关注微信</p>
+                        <span><em class="e1"></em><em class="e2"></em></span>
+                    </div>
+                </div>
+            </a>
+            <a class="consult applypie" href="<?php echo mh_uri() ?>#top">
+                <em class="icon-ic_leftbar_gotop em5"></em>
+                <div class="side_b">
+                    <div class="applypie">
+                        <em>返回顶部</em><span> <em class="e1"></em><em class="e2"></em></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+    <?php } ?>
+
+    <!-- TODO:折扣广告 -->
+    <section class="advertisement" style="display:none">
+        <a href="">
+            <em></em>
+            <img src="public/img/img_ad1@2x.jpg" style="width:110px;height:170px;"/>
+        </a>
+        <a href="">
+            <em></em>
+            <img src="public/img/img_ad2@2x.jpg" style="width:110px;height:140px;"/>
+        </a>
+    </section>
+    <!-- 咨询弹出框 -->
+    <div class="consultAdvertisement">
+        <div class="maskbg"></div>
+        <div class="content">
+            <img src="/public/img/consultAdvertisement.png"width="448px"height="448px"usemap="#consultTip"hidefocus="true" />
+            <map name="consultTip">
+                <area shape="circle"  coords="416,21,18" href="javascript:close('.consultAdvertisement');" onfocus="blur(this);">
+                <area shape="rect" coords="121,306,219,352" href="http://kefu8.kuaishang.com.cn/bs/im.htm?cas=29964___418723&fi=33367" onfocus="blur(this);" target="_blank">
+                <area shape="rect" coords="121,306,328,352" href="tencent://message/?Menu=yes&uin=938014558&Service=58&SigT=A7F6FEA02730C988F3CD0FA016CE9C6314F82458EA4F9EA43AD2BCB66684E5BB72AA183AC3A36478AF6BC978A76FA3AA7BB5DEDBA7BA4A2B5268F227D71BAB54540CE59A40C82EA864C5F7A5494231F1274A913E966497A17472325B60F28D659CC4CC8D0BEA156DA20A297A5CCD8DCA4A1E2FFCB5AA2AC3&SigU=30E5D5233A443AB2F4AB2B34F661E715501230FEB2437EE1A5D05C172FB4068676ED4086F1FC39F01E41056A245D3854AC4D53AE74E83718AC46E057E4F744DB3F0E0CE387CFD42E" onfocus="blur(this);"target="_blank"> 
+            </map>
+        </div>    
+    </div>
+
+    <!-- 脚部 -->
+    <footer class="bottombar" >
+        <section class="wrap conetnt">
+            <div class="l">
+                <h3>美好学院&gt;就业加薪一站式学习平台！</h3>
+                <p>
+                    <a href="/about" target="_blank">关于我们</a>
+                    <a href="/about#contact" target="_blank">联系我们</a>
+                    <a href="<?php echo TUTOR_HOST ?>" target="_blank">导师入口</a>
+                    <a href="/about#feedback" target="_blank">意见反馈</a>
+                </p>
+            </div>
+            <div class="c">
+                <p><strong><em class="icon-ic_bottom_phone"></em>400 920 7597</strong></p>
+                <p>
+                    <a href="<?php echo QQ_URL ?>" target="_blank">
+                        <strong><em class="icon-ic_bottom_qq"></em>400 920 7597</strong>
+                    </a>
+                </p>
+            </div>
+            <div class="r">
+                <div><img src="/public/img/img_leftbar_ewm.png"></div>
+                <p>微信公众号：美好学院</p>
+            </div>
+        </section>
+        <!-- 只有首页显示这个友情链接 -->
+        <?php if(!empty($links)){ ?>
+        <section class="wrap friend-link">
+            <span>友情链接：</span>
+            <?php foreach($links as $v){ ?>
+                <a href="<?php echo $v['url'] ?>" target="_blank"><?php echo $v['name'] ?></a>
+            <?php } ?>
+            <a href="/link" target="_blank">更多链接</a>
+        </section>
+        <?php } ?>
+        <section class="copyright">
+            <p>Copyright © 2015-2016 meihaoxueyuan.All rights reserved 蜀ICP备08108726号</p>
+        </section>
+    </footer>
+</div>
+
+<!-- 公共js -->
+<script type="text/javascript" src="/public/js/jquery.placeholder.js"></script>
+<script type="text/javascript" src="/public/js/jquery.effects.core.js"></script>
+<script type="text/javascript" src="/public/js/wow.min.js"></script>
+<!--<script type="text/javascript">if(!(/msie [6|7|8|9]/i.test(navigator.userAgent))){new WOW().init();};</script>-->
+<script type="text/javascript" src="/public/js/style.js"></script>
+
+<!-- 统计代码 -->
+<?php echo $setting['stat'] ?>
+<script type="text/javascript">
+    var userStr=$.cookie('user');
+    if(userStr){
+        var user=JSON.parse(userStr);
+        window.heap.identify({
+          name:  user.name,
+          handle: user.mobile
+        });
+    }
+</script>
+
+</body>
+</html>
+

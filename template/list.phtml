@@ -1,0 +1,124 @@
+<div class="course">
+    <?php if(empty($keywords)){ ?>
+    <!--<nav class="path">
+        <div class="wrap">
+            <a href="/list" class="a1">职业课程库</a>
+            <?php /*if(empty($c) && empty($l)){ */?>
+                <em class="icon-lb_you"></em>
+                <a>全部</a>
+            <?php /*} */?>
+            <?php /*if(!empty($c)){ */?>
+                <em class="icon-lb_you"></em>
+                <a class="categoryCrumbs1"><?php /*echo $c */?></a>
+            <?php /*} */?>
+            <?php /*if(!empty($l)){ */?>
+                <em class="icon-lb_you"></em>
+                <a class="levelsCrumbs1"><?php /*echo $levels[$l] */?></a>
+            <?php /*} */?>
+        </div>
+    </nav>-->
+    <aside class="wrap">
+        <ul>
+            <li>
+                <div class="title">课程类别：</div>
+                <div id="categorydiv">
+                    <a href="<?php echo mh_uri(array('c'=>'')) ?>" class="applypie<?php echo empty($c)?' active':'' ?>" params="">全部</a>
+                    <?php if(!empty($category)){foreach($category as $v){ ?>
+                        <a href="<?php echo mh_uri(array('c'=>$v)) ?>" class="applypie<?php echo $c==$v?' active':'' ?>"><?php echo $v ?></a>
+                    <?php }} ?>
+                </div>
+            </li>
+            <li>
+                <div class="title">课程服务：</div>
+                <div id="levelsa">
+                    <a href="<?php echo mh_uri(array('l'=>0)) ?>" class="applypie<?php echo empty($l)?' active':'' ?>" value="0">全部</a>
+                    <?php if(!empty($levels)){foreach($levels as $k => $v){ ?>
+                        <a href="<?php echo mh_uri(array('l'=>$k)) ?>" class="applypie<?php echo $l==$k?' active':'' ?>" value="<?php echo $k ?>"><?php echo $v ?></a>
+                    <?php }} ?>
+                </div>
+            </li>
+        </ul>
+    </aside>
+    <?php }else{ ?>
+    <div class="searchBox">
+        <form action="/list" method="GET">
+            <input name="keywords" id="sk" type="text" pre-value="<?php echo $setting['searchkey'] ?>" placeholder="<?php echo $setting['searchdsc'] ?>" value="<?php echo $keywords ?>">
+            <span class="error-tip"><em class="icon-searchkey_exit"></em></span>
+            <button class="icon-search" onclick="if($('#sk').val()=='')$('#sk').val($('#sk').attr('pre-value'))"></button>
+        </form>
+    </div>
+    <?php } ?>
+
+    <div class="lists wrap" id="lists">
+    <?php if(empty($courses['count'])){ ?>
+        <div class="no-data">
+            <em class="icon-cry"></em>
+            <p><?php echo empty($keywords) ? '哎哟，没有数据哦！' : '没有查到相关结果，不如看看下面的推荐吧！' ?></p>
+        </div>
+    <?php }else{ ?>
+        <?php if(!empty($keywords)){ ?>
+        <h2>共找到<span><?php echo $courses['count'] ?>门</span>与<span><?php echo $keywords ?></span>相关课程</h2>
+        <?php } ?>
+        <ul class="list-ul">
+            <!-- 最后一个li增加class：last -->
+            <?php $count = count($courses['data']);foreach($courses['data'] as $k => $v){ ?>
+            <li<?php echo ($k == $count - 1)?' class="last list-item"':' class="list-item"' ?>>
+                <a class="img-wrap" href="<?php echo '/course/'.$v['courseid'] ?>">
+                    <img src="<?php echo $v['pic'] ?>">
+                    <p class="tit">
+                        <span><?php echo $v['name'] ?></span>
+                        <em class="<?php echo $v['iconstyle'] ?>"></em>
+                    </p>
+                </a>
+                <div class="info-wrap">
+                    <a class="title" href="<?php echo '/course/'.$v['courseid'] ?>"><?php echo $v['name'] ?></a>
+                    <span class="targetItem"><em class="icon-ic_xz"></em>月薪<?php echo $v['salary'] ?></span>
+                    <span class="targetItem"><?php echo $v['oneword'] ?></span>
+                    <p class="p1">课程讲师：<?php echo $v['lecture'] ?></p>
+                    <p class="p2"><?php echo $v['description'] ?></p>
+                    <span class="define-item first"><em value="0"><?php echo $v['hours'] ?></em>课时</span>
+                    <span class="define-item"><em value="0"><?php echo $v['longtime'] ?></em>分钟</span>
+                    <?php if(!empty($v['custom1'])){ ?>
+                        <span class="define-item"><?php echo preg_replace('/([\d\+]+)/', '<em value="0">${1}</em>', $v['custom1']) ?></span>
+                    <?php } ?>
+                    <?php if(!empty($v['custom2'])){ ?>
+                        <span class="define-item"><?php echo preg_replace('/([\d\+]+)/', '<em value="0">${1}</em>', $v['custom2']) ?></span>
+                    <?php } ?>
+                    <?php if(!empty($v['custom3'])){ ?>
+                        <span class="define-item"><?php echo preg_replace('/([\d\+]+)/', '<em value="0">${1}</em>', $v['custom3']) ?></span>
+                    <?php } ?>
+                
+                    <p class="levellast label-box">
+                        <!-- 最后一个em元素增加class:"last" -->
+                        <?php $cnt = count($v['levels']);foreach($v['levels'] as $i => $level){ ?>
+                            <em class="applypie <?php echo $levelStyles[$level] ?><?php echo ($i==$cnt-1)?' last':'' ?>"><?php echo $levels[$level] ?></em>
+                        <?php } ?>
+                    </p>
+                    <a href="<?php echo '/course/'.$v['courseid'] ?>" class="detail-opt  applypie">查看详情<em class="icon-ic_xsd_more"></em></a>
+                </div>
+            </li>
+            <?php } ?>
+        </ul>
+    <?php } ?>
+    </div>
+    <footer class="paging wrap list_page" id="paging"></footer>
+
+    <?php if(!empty($keywords)){ ?>
+    <section class="wrap recommend-box">
+        <header class="paddingTop0"><h3>向你推荐</h3></header>
+        <?php echo recommend() ?>
+        <a href="/list">更多课程</a>
+    </section>
+    <?php } ?>
+
+    <link rel="Stylesheet" type="text/css" href="/public/css/wPaginate.css" />
+    <script type="text/javascript" src="/public/js/wPaginate.js"></script>
+    <script type="text/javascript">
+        $('.searchBox .error-tip').on('click', function(){
+            $(this).parent().find('input').val('');
+        });
+        var limit = 12;
+        var index = (<?php echo $p ?> - 1) * limit;
+        $('#paging').wPaginate({theme:'grey', total:<?php echo $courses['count'] ?>, index:index, limit:limit});
+    </script>
+</div>

@@ -1,0 +1,27 @@
+<div class="link-box">
+    <div class="link-header">
+        <h2>友情链接</h2>
+    </div>
+    <div class="wrap" >
+        <article class="friendlink">
+            <h2 class="link-title">友情链接</h2>
+            <div class="link-content">
+                <?php if(!empty($links)){foreach($links as $v){ ?>
+                    <a class="link-item" href="<?php echo $v['url'] ?>" target="_blank"><?php echo $v['name'] ?></a>
+                <?php }} ?>
+            </div>
+        </article>
+        <article class="application-notes">
+            <h2 class="link-title">发链申请须知</h2>
+            <div class="link-content">
+                <p class="link-notice">1、友情链接的网站必须经过ICP备案，最好教育类相关性网站。 <br/>2、网站页面整洁大方，页面无杂乱广告，百度快照正常。<br/> 3、网站不得含有非法信息。 <br/>4、定期检查，不符合要求将会移除链接。</p>
+            </div>
+        </article>
+        <article class="apply-connect">
+            <h2 class="link-title">联系QQ</h2>
+            <div class="link-content">
+                <span class="link-contact">3251401564(注明友链）</span>
+            </div>
+        </article>
+    </div>
+</div>

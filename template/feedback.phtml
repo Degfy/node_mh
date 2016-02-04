@@ -1,0 +1,76 @@
+<section class="feedback">
+    <a name="feedback"></a>
+    <header>
+        <h2>意见反馈<small>FEEDBACK</small></h2>
+    </header>
+    <!-- 提交成功、错误显示 -->
+    <div class="wrap"<?php echo empty($status)?'style="display:none"':'' ?>>
+        <?php if($status=='success'){ ?>
+            <em class="icon-XST-wancheng show"></em><span>提交成功</span>
+        <?php }else{ ?>
+            <em class="icon-guanbi"></em><span>提交失败</span>
+        <?php } ?>
+        <p>感谢您的反馈，为您提供更好的体验是我们的追求。</p>
+    </div>
+    <form class="wrap" action="/about#feedback" method="POST">
+        <!--错误的时候在div上增加class:error-->
+        <div>
+            <textarea name="content" placeholder="请描述具体意见或建议" limit="10"><?php echo $content ?></textarea>
+            <p class="error-tip"><em class="icon-jignshi"></em><span></span></p>
+        </div>
+        <div>
+            <input type="text" name="contact" placeholder="您的邮箱或QQ号码" value="<?php echo $contact ?>" />
+            <p class="error-tip"><em class="icon-jignshi"></em><span></span></p>
+        </div>
+        <button>提交</button>
+    </form>
+</section>
+
+<script type="text/javascript">
+function valid(dom){
+    var val = dom.val(), name = dom.attr('name');
+    if(val == ''){
+        if(name == 'content'){printError(dom, '请填写意见或建议内容');}
+        if(name == 'contact'){printError(dom, '请填写邮箱或QQ号码');}
+        return false;
+    }
+    if(name == 'contact'){
+        var emailReg = new RegExp('^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$');
+        var qqReg = new RegExp('^[1-9][0-9]{4,}$');
+        if(!emailReg.test(val) && !qqReg.test(val)){
+            printError(dom, '请输入合法的邮箱或QQ号');
+            return false;
+        }
+    }
+    if(dom.attr('limit')){
+        var limits = dom.attr('limit').split(',', 2);
+        var min = limits[0], max = limits[1] ? limits[1] : 0;
+        if(val.length < min || (max > 0 && val.length > max)){
+            printError(dom, '请输入'+min+(max>0?'-'+max+'位':'位以上')+'中英文');
+            return false;
+        }
+    }
+    cleanError(dom);
+    return true;
+}
+function printError(dom, msg){
+    dom.parent('div').addClass('error');
+    dom.parent('div').find('p>span').html(msg);
+}
+function cleanError(dom){
+    dom.parent('div').removeClass('error');
+    dom.parent('div').find('p>span').html('');
+}
+
+$('form textarea,input').each(function(){
+    $(this).on('blur', function(){valid($(this));});
+});
+$('form button').on('click', function(){
+    var check = true;
+    $(this).parent().find('textarea,input').each(function(){
+        check &= valid($(this));
+    });
+    $(this).attr('type', check?'submit':'button');
+    return check;
+});
+</script>

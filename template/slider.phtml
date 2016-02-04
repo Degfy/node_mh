@@ -1,0 +1,7 @@
+<?php if(!empty($recommends['data'])){ ?>
+<ul class="text-list">
+    <?php foreach($recommends['data'] as $k => $v){ ?>
+    <li><a href="/course/<?php echo $v['courseid'] ?>" target="_blank"><?php echo $v['name'] ?></a></li>
+    <?php } ?>
+</ul>
+<?php } ?>
