@@ -12,5 +12,13 @@
     "express": "^4.13.4",
     "minimist": "^1.2.0",
     "utils": "^0.3.1"
+  },
+  "appConfig": {
+    "host": "www.meihao.dev",
+    "port": "80",
+    "server": "http://test.api.meihaoxueyuan.com/",
+    "key": "abcdefghigklmnopqrstuvwxyz",
+    "app_path": ".",
+    "template": "./template"
   }
 }

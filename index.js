@@ -4,15 +4,12 @@ var minimist = require('minimist'),
   utils = require('utils')._,
   url = require('url'),
   fs = require('fs'),
+  path = require('path'),
   config_file = 'config.js',
 
   //命令行参数获取
   options = minimist(process.argv.slice(2), {
     string: ['host', 'port', 'config_url', 'key'],
-    // default: {
-    //   host: 'www.meihao.dev',
-    //   port: '80'
-    // }
   });
 
 if (options.config_url) {
@@ -31,7 +28,7 @@ if (options.config_url) {
       pageData += chunk;
     });
     res.on('end', function() {
-      write_configfile(JSON.parse(pageData), serverStart);
+      write_configfile(JSON.parse(pageData), read_origin_config(), serverStart);
     });
   });
 } else {
@@ -39,44 +36,57 @@ if (options.config_url) {
     if (!err) {
       serverStart();
     } else {
-      var configs = JSON.parse(fs.readFileSync(config_file + '.json'));
-      write_configfile(configs, serverStart);
+      write_configfile('', read_origin_config(), serverStart);
     }
   });
 }
 
-function write_configfile(configData, success_fn) {
-  utils.extend(configData, options);
-  delete configData._;
-  var config_str = 'module.exports = ' + JSON.stringify(configData, '', 2) + ';';
+function read_origin_config() {
+  var _package = JSON.parse(fs.readFileSync('./package.json'));
+  if (_package.appConfig) {
+    return _package.appConfig;
+  }
+}
+
+function write_configfile(configData, origin_config, success_fn) {
+  configData = configData || {};
+  origin_config = origin_config || {};
+
+  utils.extend(origin_config, configData);
+  utils.extend(origin_config, options);
+  delete origin_config._;
+  
+  var config_str = 'module.exports = ' + JSON.stringify(origin_config, '', 2) + ';';
   fs.writeFile(config_file, config_str, 'utf8', success_fn);
 }
 
 
 function serverStart() {
-  console.log('开始服务了哦');
-  var configs = require('./config.js'),
-    express = require('express'),
+  var configs = require('./config.js');
+  configs.app_path = path.resolve(configs.app_path || '.');
+  configs.template = path.resolve(configs.template || './template');
+  utils.extend(options, configs);
+
+
+  var express = require('express'),
     app = express(),
 
     //课程主页
-    _course = require('./handlers/course.js'),
+    _course = require('./lib/handlers/course.js')(options),
 
     //课程列表页
-    _list = require('./handlers/list.js'),
+    _list = require('./lib/handlers/list.js')(options),
 
     //支付页
-    _pay = require('./handlers/pay.js'),
+    _pay = require('./lib/handlers/pay.js')(options),
 
     //报名页
-    _apply = require('./handlers/apply.js'),
+    _apply = require('./lib/handlers/apply.js')(options),
 
     //默认处理
-    _default = require('./handlers/default.js');
+    _default = require('./lib/handlers/default.js')(options);
 
-
-  utils.extend(options, configs);
-
+  console.log('开始服务了哦:http://' + options.host + (options.port == '80' ? '' : ':' + options.port));
   app
     .use('/course', _course)
     .use('/list', _list)
