@@ -1,8 +1,8 @@
     <!--侧边栏滚动顶部-->
-    <?php if($tag != 'error'){ ?>
+    <% if(tag != 'error'){ %>
     <section class="sidebar">
         <div class="sider-content">
-            <a class="red consult applypie" href="<?php echo sprintf(KF_URL,'%E6%82%AC%E6%B5%AE%E6%A1%86','mhxy-xuanfukuang') ?>" target="_blank">
+            <a class="red consult applypie" href="<%= address.kf %>" target="_blank">
                 <em class="icon-ic_leftbar_online_lx em1"></em>
                 <div class="side_b">
                     <div class="applypie">
@@ -11,7 +11,7 @@
                     </div>
                 </div>
             </a>
-            <a class="red consult applypie" href="<?php echo QQ_URL ?>" target="_blank">
+            <a class="red consult applypie" href="<%= address.qq %>" target="_blank">
                 <em class="icon-ic_leftbar_qq em2"></em>
                 <div class="side_b">
                     <div class="applypie">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
             </a>
-            <a class="consult applypie" href="<?php echo mh_uri() ?>#top">
+            <a class="consult applypie" href="#top">
                 <em class="icon-ic_leftbar_gotop em5"></em>
                 <div class="side_b">
                     <div class="applypie">
@@ -46,7 +46,7 @@
             </a>
         </div>
     </section>
-    <?php } ?>
+    <% } %>
 
     <!-- TODO:折扣广告 -->
     <section class="advertisement" style="display:none">
@@ -80,14 +80,14 @@
                 <p>
                     <a href="/about" target="_blank">关于我们</a>
                     <a href="/about#contact" target="_blank">联系我们</a>
-                    <a href="<?php echo TUTOR_HOST ?>" target="_blank">导师入口</a>
+                    <a href="<%= address.tutor %>" target="_blank">导师入口</a>
                     <a href="/about#feedback" target="_blank">意见反馈</a>
                 </p>
             </div>
             <div class="c">
                 <p><strong><em class="icon-ic_bottom_phone"></em>400 920 7597</strong></p>
                 <p>
-                    <a href="<?php echo QQ_URL ?>" target="_blank">
+                    <a href="<%= address.qq %>" target="_blank">
                         <strong><em class="icon-ic_bottom_qq"></em>400 920 7597</strong>
                     </a>
                 </p>
@@ -97,16 +97,20 @@
                 <p>微信公众号：美好学院</p>
             </div>
         </section>
+
         <!-- 只有首页显示这个友情链接 -->
-        <?php if(!empty($links)){ ?>
+        <% if(links){ %>
         <section class="wrap friend-link">
             <span>友情链接：</span>
-            <?php foreach($links as $v){ ?>
-                <a href="<?php echo $v['url'] ?>" target="_blank"><?php echo $v['name'] ?></a>
-            <?php } ?>
+            <% for(var key in links){ %>
+
+                <a href="<%= links[key] %>" target="_blank"><%= key %></a>
+
+            <% } %>
             <a href="/link" target="_blank">更多链接</a>
         </section>
-        <?php } ?>
+        <% } %>
+
         <section class="copyright">
             <p>Copyright © 2015-2016 meihaoxueyuan.All rights reserved 蜀ICP备08108726号</p>
         </section>
@@ -121,7 +125,8 @@
 <script type="text/javascript" src="/public/js/style.js"></script>
 
 <!-- 统计代码 -->
-<?php echo $setting['stat'] ?>
+<%= setting.stat %>
+
 <script type="text/javascript">
     var userStr=$.cookie('user');
     if(userStr){

@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <title><%= setting.title %></title>
+    <meta name="keywords" content="<%= setting.keywords %>">
+    <meta name="description" content="<%= setting.description %>">
+    <meta name="baidu-site-verification" content="XehgMpxsQ7" />
+    <script type="text/javascript" src="/public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/public/js/jquery.cookie.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/public/js/PIE/PIE_IE678.js"></script>
+    <script type="text/javascript" src="/public/js/html5shiv.js"></script>
+    <script type="text/javascript" src="/public/js/jquery.placeholder.js"></script>
+    <![endif]-->
+    <!--[if IE 9]>
+    <script type="text/javascript" src="/public/js/PIE/PIE_IE9.js"></script>
+    <script type="text/javascript" src="/public/js/jquery.placeholder.js"></script>
+    <![endif]-->
+    <link rel="Shortcut Icon" href="/public/img/log.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/public/css/main.css">
+    <link rel="stylesheet" href="/public/css/ico.css">
+    <link rel="stylesheet" href="/public/css/animate.css">
+</head>
+
+<!-- 每个页面增加对应的 body pagename="值"-->
+<body pagename="<%= tag %>">
+
+<!-- 每个页面增加对应的 div class="page 值" -->
+<div class="page <%= tag %>">
+    <div class="page-header">
+        <!-- 搜索页面、列表页面、友情链接页面去掉class transparentBg-->
+        <header class="topbar<%= ['index','detail','about'].indexOf(tag) != -1?' transparentBg':'' %>">
+            <nav>
+                <h1>
+                    <a href="/"></a>
+                </h1>
+                <ul>
+                    <li class="navItem"><a href="/">首页</a></li>
+                    <li class="navItem"><a href="/list">职业课程</a></li>
+                    <li class="navItem"><a href="/list/1">系统自学</a></li>
+                    <li class="navItem"><a href="/list/2">实训强化</a></li>
+                    <li class="navItem"><a href="/list/3">就业直通</a></li>
+                </ul>
+                <div class="loginHTML">
+
+                    <!--未登录显示  -->
+                    <a href="<%= address.login %>">登录</a>
+                    <a href="<%= address.register %>">注册</a>
+                    <div class="logintip">
+                        <img src="/public/img/logoTip@2x.png" width="128px" height="71px"usemap="#userlogintip"  hidefocus="true" />
+                        <map name="userlogintip">
+                            <area shape="circle"  coords="117,16,12" href="javascript:close('.logintip');" onfocus="blur(this);"> 
+                        </map>
+                    </div>
+
+                </div>
+
+                <!-- 首页去掉class spread-->
+                <div class="soform applypie<%= tag!='index'?' spread':'' %>" id="soform">
+                <form action="/list" method="GET">
+                    <input name="keywords" id="k" class="search" type="text" pre-value="<%= setting.searchkey %>" placeholder="<%= setting.searchdsc %>">
+                    <input type="submit" class="in_submit" onclick="if($('#k').val()=='')$('#k').val($('#k').attr('pre-value'))">
+                    <em class="icon-search ico-serche" id="ico-serche"></em>
+                </form>
+                </div>
+            </nav>
+        </header>
+    </div><div class="index_content" id="top">
+    <!--头部  -->
+    <div class="topbanner-box">
+        <div class="wrap">
+            <p>
+                成为优秀的
+            </p>
+            {slider()}
+            <ul class="sys-charact">
+                <li>
+                    <em class="icon-lingjichu"></em>
+                    <p>
+                        无需基础轻松入学
+                    </p>
+                </li>
+                <li>
+                    <em class="icon-quanguobaozhang"></em>
+                    <p>
+                        就业加薪全国保障
+                    </p>
+                </li>
+                <li>
+                    <em class="icon-chaozhixuexi"></em>
+                    <p>
+                        学费超值无息分期
+                    </p>
+                </li>
+                <li>
+                    <em class="icon-mingqibiaozhun "></em>
+                    <p>
+                        名企标准系统教学
+                    </p>
+                </li>
+                <li>
+                    <em class="icon-xiaobanjiaoxue"></em>
+                    <p>
+                        行业专家精品小班
+                    </p>
+                </li>
+                <li class="last">
+                    <em class="icon-goaxiaolv"></em>
+                    <p>
+                        高效学习贴心服务
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div><!-- 课程推荐 4,8元素增加class:marginRight0-->
+    <section class="recommend-box">
+        <header>
+            <h2>
+                热门职业
+            </h2>
+        </header>
+        {recommend()}
+        <a href="list">更多课程</a>
+    </section>
+    <!-- 5对1指导 -->
+    <section class="guide">
+        <div class="wrap">
+            <h2>
+                专职教学团队，贴心服务保障。
+            </h2><img width="928px" src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447408101890350.png?e=1762768101&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:tFdWiuczIDMBqeaSFjuDTW5PAm4=" alt="5vs1@2x.png"/>
+            <div id="xst" class="eye">
+                <span value="a" class="applypie"></span><em value="a" class="applypie"></em><i value="a" class="applypie"></i>
+            </div><a href="javascript:void(0);" onclick="nextSection(&#39;#xstBox&#39;,60)"><em class="icon-xiangxia"></em></a>
+        </div>
+    </section><!-- 小书童 -->
+    <section class="xst-box" id="xstBox">
+        <div class="wrap">
+            <h2 class="white-triangle">
+                小书童 学习助手，享受高效学习的快感。
+            </h2>
+            <ul>
+                <li class="wow fadeInUp animated">
+                    <img src="public/img/img_xst_1@2x.png" width="100px"/>
+                    <p value="0">
+                        获得精英学习计划
+                    </p><span value="0">金牌讲师根据多年行业经验精心制定的专业学习计划。</span>
+                </li>
+                <li class="wow fadeInUp animated">
+                    <img src="public/img/img_xst_2@2x.png" width="100px"/>
+                    <p value="0">
+                        极致体验学习乐趣
+                    </p><span value="0">无论是课时学习、实训作业、直播课程小书童都为你安排得妥妥贴贴。你只需专注于学习，心无旁骛。</span>
+                </li>
+                <li class="wow fadeInUp animated">
+                    <img src="public/img/img_xst_3@2x.png" width="100px"/>
+                    <p value="0">
+                        轻松掌握学习节奏
+                    </p><span value="0">丰富的学习数据图表，让学习进度一目了然。就算落课也不用担心，小书童会自动为你调整学习计划。</span>
+                </li>
+                <li class="wow fadeInUp animated" data-wow-delay="0.2s">
+                    <img src="public/img/img_xst_4@2x.png" width="100px"/>
+                    <p value="0">
+                        享受个性化辅导
+                    </p><span value="0">导师、班主任 、就业顾问都能通过小书童学习助手持续关注你的学习状态，为你提供针对性学习辅导。</span>
+                </li>
+                <li class="wow fadeInUp animated" data-wow-delay="0.2s">
+                    <img src="public/img/img_xst_5@2x.png" width="100px"/>
+                    <p value="0">
+                        为你的导师评分
+                    </p><span value="0">改变导师单项评分制度，你更有权利为导师打分，点赞or差评由你决定，教学服务为你而改进。</span>
+                </li>
+                <li class="wow fadeInUp animated" data-wow-delay="0.2s">
+                    <img src="public/img/img_xst_6@2x.png" width="100px"/>
+                    <p value="0">
+                        学习效果可见
+                    </p><span value="0">导师亲笔为你撰写毕业总评、图形化能力模型展示、赢得权威毕业证书。</span>
+                </li>
+            </ul>
+            <a href="{sprintf(KF_URL,'%E5%B0%8F%E4%B9%A6%E7%AB%A5','mhxy-xiaoshutong')}" target="_blank">进一步了解小书童对我的帮助</a>
+        </div>
+    </section><!-- 讲师 -->
+    <section class="white lecturer">
+        <div class="wrap">
+            <h2>
+                只有真正优秀的老师才能帮助你上岗提薪
+            </h2>
+            <p>
+                事实上仅有大背景实战经验不见得就一定能培训好学员；优秀的老师还应该以学员的视角看待问题。想学员所想；以专业的知识 剖析问题，急学员所急；以企业的需求解决问题，用学员所用。
+            </p>
+            <div class="wow fadeInUp animated">
+                <img class="applypie" src="http://7xllah.com2.z0.glb.qiniucdn.com/1511241448352052804818.png?e=1763712052&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:212fiWoyKAhUUbDWYsIcWnQutsM=" alt="刘津.png"/>
+                <h3>
+                    刘津 Legene<span value="0" class="applypie gold">金牌讲师</span>
+                </h3>
+                <p class="job">
+                    阿里巴巴交互设计专家，丁磊推荐热销专业书籍《破茧成蝶》作者。
+                </p>
+                <p class="major">
+                    现任阿里巴巴交互设计专家，曾任网易UED主管；负责过多款知名产品设计工作，对产品的设计、交互、用研拥有顶尖的造诣。
+                </p>
+                <p class="case">
+                    成功案例：<span value="0" class="applypie">网易新闻客户端</span><span value="0" class="applypie">快的</span><span value="0" class="applypie">御膳房</span>
+                </p>
+            </div>
+            <div class="wow fadeInUp animated" data-wow-delay="0.2s">
+                <img class="applypie" src="http://7xllah.com2.z0.glb.qiniucdn.com/7e544c3f6435daa24edf226b8869e07b?e=1765178108&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:zm5hU0nrNDXx92lU5ai8Y8Ps55A=" alt="傅淏.png"/>
+                <h3>
+                    傅淏 Angela<span value="0" class="applypie full-time">专职导师</span>
+                </h3>
+                <p class="job">
+                    十五年互联网产品经验，优秀产品经理导师。
+                </p>
+                <p class="major">
+                    计算机硕士，前UC、盛大产品经理。善于快速掌握陌生领域规律，成功完成过多个不同类型的互联网产品（SNS、APP、Game、Study、Music、OA）；兼具系统产品运营经验的，市场分析与产品设计专家。
+                </p>
+                <p class="case">
+                    成功案例：<span value="0" class="applypie">UC</span><span value="0" class="applypie">嗨游</span><span value="0" class="applypie">咪咕音乐</span><span value="0" class="applypie">巴士公交</span><span value="0" class="applypie">摸摸三国</span><span value="0" class="applypie">诛仙战记</span>
+                </p>
+            </div>
+            <div class="wow fadeInUp animated" data-wow-delay="0.2s">
+                <img class="applypie" src="http://7xllah.com2.z0.glb.qiniucdn.com/1511241448355119605094.png?e=1763715121&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:cDRoR-Hibg4-_5HJl_UVi1ip1RU=" alt="刘月.png"/>
+                <h3>
+                    李月 Yoyo<span value="0" class="applypie gold">金牌讲师</span>
+                </h3>
+                <p class="job">
+                    网易UED资深设计师，丁磊推荐热销专业书籍《破茧成蝶》作者。
+                </p>
+                <p class="major">
+                    网易UED资深设计师，主导设计多款网易品牌产品。对产品的设计、交互、用研拥有资深的造诣和分享经验。
+                </p>
+                <p class="case">
+                    成功案例：<span value="0" class="applypie">网易新闻客户端</span><span value="0" class="applypie">网易彩票</span>
+                </p>
+            </div>
+            <div class="wow fadeInUp animated" data-wow-delay="0.2s">
+                <img class="applypie" src="http://7xllah.com2.z0.glb.qiniucdn.com/1511241448355131342839.png?e=1763715133&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:-VcBpMNEglt3x4pzudAm9gWHig8=" alt="名师_伍丞.jpg"/>
+                <h3>
+                    伍丞 Vic<span value="0" class="applypie gold">金牌讲师</span>
+                </h3>
+                <p class="job">
+                    资深交互设计师，交互设计人气导师。
+                </p>
+                <p class="major">
+                    前去哪儿移动端酒店与机票业务“大改版”主设计师，后在艺龙期间促进业务转化率提高40%。到成都本土知名创业公司（地产020）担任产品总监后，积极参与产品新人帮扶活动，专业造诣获得高人气。
+                </p>
+                <p class="case">
+                    成功案例：<span value="0" class="applypie">去哪儿</span><span value="0" class="applypie">艺龙</span>
+                </p>
+            </div>
+            <div class="wow fadeInUp animated" data-wow-delay="0.2s">
+                <img class="applypie" src="http://7xllah.com2.z0.glb.qiniucdn.com/f2aee72a85278daa7204463eb7ae1e77?e=1765177031&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:CO_dgIPyzIdP-XLL3AT1aUE7qyE=" alt="img1.png"/>
+                <h3>
+                    宋识超 Rico<span value="0" class="applypie gold">金牌讲师</span>
+                </h3>
+                <p class="job">
+                    新浪微博视觉设计师，典型实用派主义导师代表。
+                </p>
+                <p class="major">
+                    工业设计专业出身，拥有扎实的科班功底。在长虹集团深造用户研究能力后，进入新浪负责微博物联网、新浪读书、微博互动营销等重要项目。个人设计风格简洁大方、富有质感、充满灵性。同时，其在平台设计规范、人机交互特点、简介设计理念等研究领域颇具成绩。
+                </p>
+                <p class="case">
+                    成功案例：<span value="0" class="applypie">新浪微博</span><span value="0" class="applypie">新浪读书</span><span value="0" class="applypie">微博物联网</span>
+                </p>
+            </div>
+            <div class="last wow fadeInUp animated" data-wow-delay="0.2s">
+                <img class="applypie" src="http://7xllah.com2.z0.glb.qiniucdn.com/1511241448353488754100.png?e=1763713488&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:o_CxQB7ZhFcso7TIiQQFwhA6ClU=" alt="余泓岑.png"/>
+                <h3>
+                    余泓岑 Mograine<span value="0" class="applypie full-time">专职导师</span>
+                </h3>
+                <p class="job">
+                    五年产品经验，腾讯产品人才培训导师。
+                </p>
+                <p class="major">
+                    在工具、社交、大数据、后端系统、商业广告系统等产品的策划、运营、设计方面拥有丰富经验与独到实践解决方案体系。
+                </p>
+                <p class="case">
+                    成功案例：<span value="0" class="applypie">Camera360</span><span value="0" class="applypie">腾讯TEG信安AOP系统</span>
+                </p>
+            </div>
+        </div>
+    </section><!-- 职业级别 -->
+    <section class="gray graphic profession">
+        <div class="wrap">
+            <div class="left-box wow fadeInUp animated">
+                <h2>
+                    领先企业需求的一体化课程 <br/> 超越职业需要的专业化标准
+                </h2>
+                <p value="0">
+                    想告别低效率的碎片式学习状态？<br/>想零基础也能掌握系统专业能力？<br/>名企核心人才素质体系、行业公认系统能力结构、小书童学习助手。<br/>是时候选择顶级人才培养服务了，让职业潜力来一场更美好的爆发。
+                </p>
+            </div>
+            <div class="right-box  wow fadeInUp animated">
+                <img class="profession-img" width="360px" src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447408307362652.png?e=1762768307&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:rtN0Y36iXjP7bEIPxujT4mqc2Yc=" alt="img_yth@2x.png"/>
+            </div>
+        </div>
+    </section><!-- 保障 -->
+    <section class="white graphic security">
+        <div class="wrap">
+            <div class="left-box wow fadeInUp animated">
+                <img  width="236px" src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447408365699366.png?e=1762768365&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:l7jJRC8GzwJp9-NaQ-iLdiYygzM=" alt="img_bao@2x.png"/>
+            </div>
+            <div class="right-box wow fadeInUp animated">
+                <h2>
+                    全面保障就业城市与薪资<br/> 专属匹配优质职位等你入职
+                </h2>
+                <p value="pb">
+                    与拉勾、猎聘、周伯通等知名招聘品牌深度合作，保障职位优质性。<br/> 同时，为上千家大中小型企业达成人才战略合作，保障职位可靠度。<br/>专业猎头为你量身定制就业规划，匹配最适合职位，保障正式入职。
+                </p>
+            </div>
+        </div>
+    </section><!-- 合作伙伴 -->
+    <section class="partner">
+        <header>
+            <h2>
+                梦想，源于彼此认同。
+            </h2>
+        </header>
+        <h4>
+            教学品质吸引诸多名校学霸
+        </h4>
+        <div class="wrap">
+            <img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447401971529393.jpg?e=1762761971&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:npTcZteOqHkXM60HlvbsC_jVfis=" width="165px" height="60px" alt="university_1.jpg" class="applypie"/><img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447401986802363.jpg?e=1762761986&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:VVtx_icSq5XTik7HfeZulVev5R4=" width="165px" height="60px" alt="university_2.jpg" class="applypie"/><img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447401999374515.jpg?e=1762761999&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:J-NgaHB0KvA-l_JBDmmGSV1Itew=" width="165px" height="60px" alt="university_3.jpg" class="applypie"/><img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447402012395487.jpg?e=1762762012&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:tzRM-CY8tFN_SClg_-4LkmGCUSc=" width="165px" height="60px" alt="university_4.jpg" class="applypie"/><img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447402024705675.jpg?e=1762762024&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:pV1h7ldXjkOBdex64pwgJRhT2eI=" width="165px" height="60px" alt="university_5.jpg" class="applypie"/><img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447402034483216.jpg?e=1762762034&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:fmPtrN2Tw69AG-e0qybUbXRVuKs=" width="165px" height="60px" alt="university_6.jpg" class="applypie"/><img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447402048944244.jpg?e=1762762048&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:nhhJBwDGqiwrU5WCAtwYTStPVqc=" width="165px" height="60px" alt="university_7.jpg" class="applypie"/><img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447402061100430.jpg?e=1762762061&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:YeNrpm-Ct3hsfZ3q6zxg1crJZo0=" width="165px" height="60px" alt="university_8.jpg" class="applypie"/><img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447402076434269.jpg?e=1762762076&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:z9SCWvR1gB7TKq-86K0hRIBNJrE=" width="165px" height="60px" alt="university_9.jpg" class="applypie"/><img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447402093554069.jpg?e=1762762093&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:Z74-5us_YB1Wpgb8TJhD4MtSXD4=" width="165px" height="60px" alt="university_10.jpg" class="applypie"/><img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447402131687259.jpg?e=1762762131&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:jR1wols3hBg75tRnygDXTEnHAQo=" width="165px" height="60px" alt="university_11.jpg" class="applypie"/><span value="gd" class="applypie">更多名校</span>
+        </div>
+        <h4>
+            学院能力赢得众多企业青睐
+        </h4>
+        <div class="wrap">
+            <img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447402146226856.jpg?e=1762762146&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:ML8tR_ySGDCgsbYumidjsZ7DNKI=" width="165px" height="60px" alt="qiye_1.jpg" class="applypie"/><img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447402156307085.jpg?e=1762762156&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:4oejJbDuc94wyETiYIVmkvpW-iU=" width="165px" height="60px" alt="qiye_2.jpg" class="applypie"/><img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447402194825332.jpg?e=1762762195&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:1WkZKJsRrYvs49dOkSG17mZZxv8=" width="165px" height="60px" alt="qiye_3.jpg" class="applypie"/><img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447402204239704.jpg?e=1762762204&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:oLjbw-AyFRnmkW2aqO1OHGIDWec=" width="165px" height="60px" alt="qiye_4.jpg" class="applypie"/><img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447402220870438.jpg?e=1762762220&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:myt2iPC2Oe9rjWvZrsH41B91_vo=" width="165px" height="60px" alt="qiye_5.jpg" class="applypie"/><img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447402240248710.jpg?e=1762762240&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:UydZTpw393zTx-gbYqNASB7CCzI=" width="165px" height="60px" alt="qiye_6.jpg" class="applypie"/><img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447402255284785.jpg?e=1762762255&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:hftW48LDfPiCKcPLsCYu966N0fI=" width="165px" height="60px" alt="qiye_7.jpg" class="applypie"/><img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447402271308604.jpg?e=1762762271&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:nt_vJ1q_uVPBhZoBCq4lxVb6RXc=" width="165px" height="60px" alt="qiye_8.jpg" class="applypie"/><img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447402286231508.jpg?e=1762762286&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:zMbBmRazNkTvZuzWjkOjkOOtmhc=" width="165px" height="60px" alt="qiye_9.jpg" class="applypie"/><img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447402296989632.jpg?e=1762762296&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:Le_4E_RXrNHvgffRphl8gp71cvQ=" width="165px" height="60px" alt="qiye_10.jpg" class="applypie"/><img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447402311110961.jpg?e=1762762311&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:-C4X7HwDTwcHow3Vg2i7NmRir1w=" width="165px" height="60px" alt="qiye_11.jpg" class="applypie"/><span value="gb" class="applypie">更多名企</span>
+        </div>
+    </section><!-- 梦想照进现实 4,8元素增加class:marginRight0-->
+    <section class="dream-box">
+        <header>
+            <h2>
+                梦想，终于照进现实。
+            </h2>
+            <p value="hh">
+                好口碑，源于教学效果好，学员就业率高。
+            </p>
+        </header>
+        <ul>
+            <li class="showItme">
+                <img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447404971362635.jpg?e=1762764971&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:UIQsihz52qWw_XK9Rg2Ag53qQdQ=" width="240px" alt="学员1_赵旭东.jpg"/>
+                <div>
+                    <h4>
+                        赵旭东
+                    </h4>
+                    <div class="slidebox">
+                        <p class="p1">
+                            程序员转型成功
+                        </p>
+                        <p class="p2">
+                            2013年向刘老师学习以后，零基础顺利入门，实现了“程序猿”到“产品汪”的蜕变。课程饱含系统知识、实战方法及对行业的深度见解，强烈推荐给有产品梦想的同学！
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="showItme">
+                <img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447404984217035.jpg?e=1762764984&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:0AIloV9Wh6xvStRFjbaRXNJJGyw=" width="240px" alt="学员2_GeorgeNiu.jpg"/>
+                <div>
+                    <h4>
+                        GeorgeNiu
+                    </h4>
+                    <div class="slidebox">
+                        <p class="p1">
+                            应届生名企校招
+                        </p>
+                        <p class="p2">
+                            老师在我们团队初期发展时给予了很大的指导，在产品设计的学习过程中，不断做以正确的指点与鼓励，让我体会到产品的魅力！
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="showItme">
+                <img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447405000981276.jpg?e=1762765000&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:NqOXMKG5RjkoHX8pu1XPTG22FaA=" width="240px" alt="学员3_木子.jpg"/>
+                <div>
+                    <h4>
+                        木子
+                    </h4>
+                    <div class="slidebox">
+                        <p class="p1">
+                            在职者内部晋升
+                        </p>
+                        <p class="p2">
+                            课程涉及了很多我工作5年都未曾触及的深度，且不论其他同学的体验，就我自己而言，会有一种醍醐灌顶的感觉，祝福自己能做出梦寐以求的优质产品。
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="marginRight0 showItme">
+                <img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447405018863487.jpg?e=1762765018&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:set9GEyfZqZIfoF_OjEoPpNTxzI=" width="240px" alt="学员4_杜保江.jpg"/>
+                <div>
+                    <h4>
+                        杜保江
+                    </h4>
+                    <div class="slidebox">
+                        <p class="p1">
+                            应届生名企校招
+                        </p>
+                        <p class="p2">
+                            应届毕业后想做产品，但其实对产品经理是什么却一窍不通，直到参加完学习后，才真正理解了产品，也才能通过奇虎360校招，顺利成为一名产品人。
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="showItme">
+                <img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447405028779315.jpg?e=1762765028&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:07mOqbzC4I-0YAJf7KnKHfXpSsw=" width="240px" alt="学员5_胡累.jpg"/>
+                <div>
+                    <h4>
+                        胡累
+                    </h4>
+                    <div class="slidebox">
+                        <p class="p1">
+                            在职者高薪被猎
+                        </p>
+                        <p class="p2">
+                            内容系统丰富、行业分析深刻，得益刘老师的启发，创业获得来之不易的人生第一桶金。不免俗的安利一下，想做真正的产品经理，从美好学院开始，哈哈：）
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="showItme">
+                <img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447405045186817.jpg?e=1762765045&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:boZjBMu_tpSIk1YEWuDFxgOxOpE=" width="240px" alt="学员6_傅江彪 百度.jpg"/>
+                <div>
+                    <h4>
+                        傅江彪
+                    </h4>
+                    <div class="slidebox">
+                        <p class="p1">
+                            应届生名企校招
+                        </p>
+                        <p class="p2">
+                            一位在科大讯飞工作的同学推荐参加了学习，也是在这儿赢得了进入百度国际化中心团队的机会，非常感谢刘老师在帮助我成长的同时还带来珍贵的机会！
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="showItme">
+                <img src="http://7xllah.com2.z0.glb.qiniucdn.com/1511131447405058690007.jpg?e=1762765058&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:6Rl_4Dw-r_iXpee1Nz2P9gl4lb4=" width="240px" alt="学员7_张亚舟.jpg"/>
+                <div>
+                    <h4>
+                        张亚舟
+                    </h4>
+                    <div class="slidebox">
+                        <p class="p1">
+                            退伍兵华丽蜕变
+                        </p>
+                        <p class="p2">
+                            老师，我终于得到产品Offer啦，谢谢。你完全可以说：你看，我的学员里居然有从部队出来后，变成了产品经理，这个跨度多大，哈哈：）不服来辩。
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="marginRight0 showItme">
+                <img src="public/img/8@2x.png" width="240px"/><a href="javascript:void(0);">更多学员</a>
+                <div>
+                    <h4>
+                        各大企业
+                    </h4>
+                    <div class="slidebox">
+                        <p class="p1">
+                            梦想照进了现实
+                        </p>
+                        <p class="p2">
+                            关于职业培训的定义或许眼花缭乱，我们仅只专注：100%对口就业与更好的职业前途。事实上，这才是一个专业教育品牌应该与学员之间真正共同追求的极致价值。
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section class="sys-evaluate">
+        <div class="wrap">
+            <div class="shuffling sequence-theme" id="pics2">
+                <ul class="sequence-canvas">
+                    <li>
+                        <a href="javascript:;void(0)"><img class="applypie" src="http://test.i.meihaoxueyuan.com/a125d74f97bac4f1977d866eb54849f3?e=1767434468&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:pTuJBKq9PaBDq_wkV3l5B7XrSbU=" alt=" 徐灏.png"/>
+                        <h2>
+                            “美好学院将有机会成为未来优质在线教育服务的代名词；改善生活，改变世界。”
+                        </h2>
+                        <p>
+                            徐灏 · Camera360创始人&CEO
+                        </p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;void(0)"><img class="applypie" src="http://test.i.meihaoxueyuan.com/c01993f459525cbbcd2e8e3b9bf1e688?e=1767434430&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:qXQYyQxW7SY8Tx902j_2xj4ibUQ=" alt="芮斌.png"/>
+                        <h2>
+                            “优秀的产品经理授课，实战项目的演练，一群有产品经理梦想的年轻人在美好学院成就美好人生！”
+                        </h2>
+                        <p>
+                            芮斌 · 前华为消费BG战略官
+                        </p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;void(0)"><img class="applypie" src="http://test.i.meihaoxueyuan.com/c79002d8014f5c43b5ec625942f9337f?e=1767434458&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:sixO0gWb7MsHHdNrLfjXCgz-hcQ=" alt="王永.png"/>
+                        <h2>
+                            “当你遇到一位美好学院的学员激动的与你分享他入职的喜悦时，你会和我一样，深信教育之美！”
+                        </h2>
+                        <p>
+                            王永 · 品牌中国产业联盟秘书长
+                        </p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;void(0)"><img class="applypie" src="http://test.i.meihaoxueyuan.com/8dbe970c76d4fee0fa63dad60869702e?e=1767434422&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:pZS0_2cmimIgb7cyGLKyzxwaL9Q=" alt="黄宇韬.png"/>
+                        <h2>
+                            “我认为美好学院是努力在让每一位职场新人拥有一次实现梦想的机会。”
+                        </h2>
+                        <p>
+                            黄宇韬 · 小恩爱创始人
+                        </p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;void(0)"><img class="applypie" src="http://test.i.meihaoxueyuan.com/91a66dc4e93e42ec7bf44194f504b46a?e=1767434442&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:k1MPWK02obhy6yFUQBpnNaMMH2c=" alt="童玮亮.png"/>
+                        <h2>
+                            “美好学院，分享教育的美好，工作的美好，专业的美好，生活的美好！”
+                        </h2>
+                        <p>
+                             童玮亮 · 梧桐树资本合伙人
+                        </p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;void(0)"><img class="applypie" src="http://test.i.meihaoxueyuan.com/a25e3d7ae720ba975bc3d563ca073fcd?e=1767434477&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:2E_7gKdK6IazK9Qj5ypr4U3EFNY=" alt=" 许式伟.png"/>
+                        <h2>
+                            “在我眼中优秀的教育品牌只仅有一条衡量标准，只专注培养出真正符合市场需求的优质人才。”
+                        </h2>
+                        <p>
+                            许式伟 · 七牛CEO
+                        </p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;void(0)"><img class="applypie" src="http://test.i.meihaoxueyuan.com/524321dc5fb2eaf99a5a863aa90d545f?e=1767434415&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:H4KtawuL7ubUGZQDK_f7FeVJuv4=" alt="黄毅.png"/>
+                        <h2>
+                            “将那些精心培育的思想果实转赠他人，是我能想到最美好的事。美好学院就是专注创造这种美好。”
+                        </h2>
+                        <p>
+                            黄毅 · 抹茶美妆创始人
+                        </p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;void(0)"><img class="applypie" src="http://test.i.meihaoxueyuan.com/4f4406bdedf7a9a5a83d715a2974732e?e=1767434394&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:DAbt1OIzm7NvnA8AsVWPxwW6vuU=" alt="陈方毅.png"/>
+                        <h2>
+                            “美好学院为我们培养了不少优秀人才，这对于学员和我们都是最美好的事。”
+                        </h2>
+                        <p>
+                            陈方毅 · 美柚CEO
+                        </p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;void(0)"><img class="applypie" src="http://test.i.meihaoxueyuan.com/b6e719187d86790160b05fe74ea04946?e=1767434450&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:hLcKEG7GeIT9zgq7CG-pJqNG16g=" alt="万格格.png"/>
+                        <h2>
+                            “在线职业教育浮躁又迷茫的当下，美好学院整个教学服务体系一直坚持学员价值，弥足珍贵。”
+                        </h2>
+                        <p>
+                            万格格 · 花色优品CEO
+                        </p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;void(0)"><img class="applypie" src="http://test.i.meihaoxueyuan.com/f2bd67cd35085cf623b5d4a902f85020?e=1767434485&token=FE20ABvXARrQU03hyZ00yfGphGsOl_lBXsmwsDWx:DfNuuHGrp8kvEjIVgI518yY0zqw=" alt="张琦琦.png"/>
+                        <h2>
+                            “专业技能扎实、思辨能力突出、任务执行高效……这就是我喜欢美好学院学员的原因。”
+                        </h2>
+                        <p>
+                             张琦琦 · 前腾讯品牌总监、风筝连线创始人
+                        </p></a>
+                    </li>
+                </ul>
+                <ul class="sequence-pagination"></ul>
+                <div class="pager pager2">
+                    <div class="sequence-prev prev">
+                        <em class="icon-ic_mtpj_left_jt"></em>
+                    </div>
+                    <div class="sequence-next next">
+                        <em class="icon-ic_mtpj_right_jt"></em>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="meet-self">
+        <div class="wrap" id="banner">
+            <h2>
+                开始，遇见更美好的自己。
+            </h2><a href="/list" class="a1 applypie">选择我的职业</a>
+            <a href="{sprintf(KF_URL,'%E8%81%8C%E4%B8%9A%E8%AF%84%E4%BC%B0','mhxy-zhiyepinggu')}" target="_blank" class="a2 applypie">免费职业评估</a>
+        </div>
+    </section>
+</div>    <!--侧边栏滚动顶部-->
+    <% if(tag != 'error'){ %>
+    <section class="sidebar">
+        <div class="sider-content">
+            <a class="red consult applypie" href="<%= address.kf %>" target="_blank">
+                <em class="icon-ic_leftbar_online_lx em1"></em>
+                <div class="side_b">
+                    <div class="applypie">
+                        <em>在线咨询</em>
+                        <span><em class="e1"></em><em class="e2"></em></span>
+                    </div>
+                </div>
+            </a>
+            <a class="red consult applypie" href="<%= address.qq %>" target="_blank">
+                <em class="icon-ic_leftbar_qq em2"></em>
+                <div class="side_b">
+                    <div class="applypie">
+                        <em >QQ咨询</em>
+                        <span><em class="e1"></em><em class="e2"></em></span>
+                    </div>
+                </div>
+            </a>
+            <a class="consult applypie" href="javascript:void(0);">
+                <em class="icon-ic_leftbar_phone em3"></em>
+                <div class="side_b tel">
+                    <div class="applypie"><em>免费电话：400 920 7597</em><span><em class="e1"></em><em class="e2"></em></span></div>
+                </div>
+            </a>
+            <a class="consult applypie" href="javascript:void(0);">
+                <em class="icon-ic_leftbar_gz em4"></em>
+                <div class="side_b weixin">
+                    <div class="applypie">
+                        <img src="/public/img/img_leftbar_ewm.png" style="width:85px;height:85px;">
+                        <p>扫码关注微信</p>
+                        <span><em class="e1"></em><em class="e2"></em></span>
+                    </div>
+                </div>
+            </a>
+            <a class="consult applypie" href="#top">
+                <em class="icon-ic_leftbar_gotop em5"></em>
+                <div class="side_b">
+                    <div class="applypie">
+                        <em>返回顶部</em><span> <em class="e1"></em><em class="e2"></em></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+    <% } %>
+
+    <!-- TODO:折扣广告 -->
+    <section class="advertisement" style="display:none">
+        <a href="">
+            <em></em>
+            <img src="public/img/img_ad1@2x.jpg" style="width:110px;height:170px;"/>
+        </a>
+        <a href="">
+            <em></em>
+            <img src="public/img/img_ad2@2x.jpg" style="width:110px;height:140px;"/>
+        </a>
+    </section>
+    <!-- 咨询弹出框 -->
+    <div class="consultAdvertisement">
+        <div class="maskbg"></div>
+        <div class="content">
+            <img src="/public/img/consultAdvertisement.png"width="448px"height="448px"usemap="#consultTip"hidefocus="true" />
+            <map name="consultTip">
+                <area shape="circle"  coords="416,21,18" href="javascript:close('.consultAdvertisement');" onfocus="blur(this);">
+                <area shape="rect" coords="121,306,219,352" href="http://kefu8.kuaishang.com.cn/bs/im.htm?cas=29964___418723&fi=33367" onfocus="blur(this);" target="_blank">
+                <area shape="rect" coords="121,306,328,352" href="tencent://message/?Menu=yes&uin=938014558&Service=58&SigT=A7F6FEA02730C988F3CD0FA016CE9C6314F82458EA4F9EA43AD2BCB66684E5BB72AA183AC3A36478AF6BC978A76FA3AA7BB5DEDBA7BA4A2B5268F227D71BAB54540CE59A40C82EA864C5F7A5494231F1274A913E966497A17472325B60F28D659CC4CC8D0BEA156DA20A297A5CCD8DCA4A1E2FFCB5AA2AC3&SigU=30E5D5233A443AB2F4AB2B34F661E715501230FEB2437EE1A5D05C172FB4068676ED4086F1FC39F01E41056A245D3854AC4D53AE74E83718AC46E057E4F744DB3F0E0CE387CFD42E" onfocus="blur(this);"target="_blank"> 
+            </map>
+        </div>    
+    </div>
+
+    <!-- 脚部 -->
+    <footer class="bottombar" >
+        <section class="wrap conetnt">
+            <div class="l">
+                <h3>美好学院&gt;就业加薪一站式学习平台！</h3>
+                <p>
+                    <a href="/about" target="_blank">关于我们</a>
+                    <a href="/about#contact" target="_blank">联系我们</a>
+                    <a href="<%= address.tutor %>" target="_blank">导师入口</a>
+                    <a href="/about#feedback" target="_blank">意见反馈</a>
+                </p>
+            </div>
+            <div class="c">
+                <p><strong><em class="icon-ic_bottom_phone"></em>400 920 7597</strong></p>
+                <p>
+                    <a href="<%= address.qq %>" target="_blank">
+                        <strong><em class="icon-ic_bottom_qq"></em>400 920 7597</strong>
+                    </a>
+                </p>
+            </div>
+            <div class="r">
+                <div><img src="/public/img/img_leftbar_ewm.png"></div>
+                <p>微信公众号：美好学院</p>
+            </div>
+        </section>
+
+        <!-- 只有首页显示这个友情链接 -->
+        <% if(links){ %>
+        <section class="wrap friend-link">
+            <span>友情链接：</span>
+            <% for(var key in links){ %>
+
+                <a href="<%= links[key] %>" target="_blank"><%= key %></a>
+
+            <% } %>
+            <a href="/link" target="_blank">更多链接</a>
+        </section>
+        <% } %>
+
+        <section class="copyright">
+            <p>Copyright © 2015-2016 meihaoxueyuan.All rights reserved 蜀ICP备08108726号</p>
+        </section>
+    </footer>
+</div>
+
+<!-- 公共js -->
+<script type="text/javascript" src="/public/js/jquery.placeholder.js"></script>
+<script type="text/javascript" src="/public/js/jquery.effects.core.js"></script>
+<script type="text/javascript" src="/public/js/wow.min.js"></script>
+<!--<script type="text/javascript">if(!(/msie [6|7|8|9]/i.test(navigator.userAgent))){new WOW().init();};</script>-->
+<script type="text/javascript" src="/public/js/style.js"></script>
+
+<!-- 统计代码 -->
+<%= setting.stat %>
+
+<script type="text/javascript">
+    var userStr=$.cookie('user');
+    if(userStr){
+        var user=JSON.parse(userStr);
+        window.heap.identify({
+          name:  user.name,
+          handle: user.mobile
+        });
+    }
+</script>
+
+</body>
+</html>
+

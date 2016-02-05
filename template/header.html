@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <title><%= setting.title %></title>
+    <meta name="keywords" content="<%= setting.keywords %>">
+    <meta name="description" content="<%= setting.description %>">
+    <meta name="baidu-site-verification" content="XehgMpxsQ7" />
+    <script type="text/javascript" src="/public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/public/js/jquery.cookie.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/public/js/PIE/PIE_IE678.js"></script>
+    <script type="text/javascript" src="/public/js/html5shiv.js"></script>
+    <script type="text/javascript" src="/public/js/jquery.placeholder.js"></script>
+    <![endif]-->
+    <!--[if IE 9]>
+    <script type="text/javascript" src="/public/js/PIE/PIE_IE9.js"></script>
+    <script type="text/javascript" src="/public/js/jquery.placeholder.js"></script>
+    <![endif]-->
+    <link rel="Shortcut Icon" href="/public/img/log.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/public/css/main.css">
+    <link rel="stylesheet" href="/public/css/ico.css">
+    <link rel="stylesheet" href="/public/css/animate.css">
+</head>
+
+<!-- 每个页面增加对应的 body pagename="值"-->
+<body pagename="<%= tag %>">
+
+<!-- 每个页面增加对应的 div class="page 值" -->
+<div class="page <%= tag %>">
+    <div class="page-header">
+        <!-- 搜索页面、列表页面、友情链接页面去掉class transparentBg-->
+        <header class="topbar<%= ['index','detail','about'].indexOf(tag) != -1?' transparentBg':'' %>">
+            <nav>
+                <h1>
+                    <a href="/"></a>
+                </h1>
+                <ul>
+                    <li class="navItem"><a href="/">首页</a></li>
+                    <li class="navItem"><a href="/list">职业课程</a></li>
+                    <li class="navItem"><a href="/list/1">系统自学</a></li>
+                    <li class="navItem"><a href="/list/2">实训强化</a></li>
+                    <li class="navItem"><a href="/list/3">就业直通</a></li>
+                </ul>
+                <div class="loginHTML">
+
+                    <!--未登录显示  -->
+                    <a href="<%= address.login %>">登录</a>
+                    <a href="<%= address.register %>">注册</a>
+                    <div class="logintip">
+                        <img src="/public/img/logoTip@2x.png" width="128px" height="71px"usemap="#userlogintip"  hidefocus="true" />
+                        <map name="userlogintip">
+                            <area shape="circle"  coords="117,16,12" href="javascript:close('.logintip');" onfocus="blur(this);"> 
+                        </map>
+                    </div>
+
+                </div>
+
+                <!-- 首页去掉class spread-->
+                <div class="soform applypie<%= tag!='index'?' spread':'' %>" id="soform">
+                <form action="/list" method="GET">
+                    <input name="keywords" id="k" class="search" type="text" pre-value="<%= setting.searchkey %>" placeholder="<%= setting.searchdsc %>">
+                    <input type="submit" class="in_submit" onclick="if($('#k').val()=='')$('#k').val($('#k').attr('pre-value'))">
+                    <em class="icon-search ico-serche" id="ico-serche"></em>
+                </form>
+                </div>
+            </nav>
+        </header>
+    </div>

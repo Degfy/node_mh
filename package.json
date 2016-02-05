@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^2.4.1",
     "express": "^4.13.4",
     "minimist": "^1.2.0",
     "utils": "^0.3.1"
@@ -19,6 +20,7 @@
     "server": "http://test.api.meihaoxueyuan.com",
     "key": "abcdefghigklmnopqrstuvwxyz",
     "app_path": ".",
-    "template": "./template"
+    "template": "./template",
+    "cache_path": "./cache"
   }
 }
